@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cumpleaños número 30 de Jonathan — información de llegada, transporte y hospedaje.">
+  <title>Los 30 de Jonathan | Celebración</title>
+  <style>
+    :root { --navy:#090909; --ink:#f3f0e9; --sand:#0c0c0d; --cream:#171718; --coral:#d4af65; --sun:#d4af65; --aqua:#c7c9ce; --line:rgba(212,175,101,.30); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--sand); font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; }
+    .hidden { display:none !important; }
+    .gate { min-height:100vh; display:grid; place-items:center; padding:24px; background:radial-gradient(circle at 80% 12%, rgba(212,175,101,.28), transparent 29%), radial-gradient(circle at 15% 90%, rgba(199,201,206,.12), transparent 30%), linear-gradient(145deg,#050505,#161411); color:#fff; text-align:center; }
+    .gate-card { width:min(590px,100%); padding:46px 30px; border:1px solid rgba(212,175,101,.45); border-radius:24px; background:rgba(12,12,13,.78); box-shadow:0 24px 80px rgba(0,0,0,.55); backdrop-filter:blur(7px); }
+    .eyebrow { margin:0 0 14px; color:var(--sun); font-size:.74rem; font-weight:800; letter-spacing:.17em; text-transform:uppercase; }
+    .gate h1 { margin:0; font-family:Georgia,serif; font-size:clamp(2.7rem,10vw,5rem); line-height:.92; }
+    .gate p { margin:24px auto 0; max-width:390px; line-height:1.55; }
+    #countdown { display:flex; justify-content:center; gap:11px; margin:30px 0 4px; }
+    .count { min-width:66px; padding:11px 8px; border:1px solid rgba(212,175,101,.26); border-radius:12px; background:rgba(255,255,255,.07); }
+    .count strong { display:block; font-size:1.55rem; }
+    .count span { font-size:.68rem; letter-spacing:.07em; text-transform:uppercase; }
+    .skip-button { margin-top:25px; padding:12px 18px; border:1px solid var(--sun); border-radius:999px; color:var(--navy); background:var(--sun); cursor:pointer; font:inherit; font-size:.86rem; font-weight:900; }
+    .skip-button:hover { color:#fff; background:transparent; }
+    .topbar { position:sticky; top:0; z-index:5; display:flex; align-items:center; justify-content:space-between; gap:18px; padding:15px max(5vw,24px); color:#fff; border-bottom:1px solid rgba(212,175,101,.32); background:rgba(9,9,9,.94); backdrop-filter:blur(8px); }
+    .brand { font-family:Georgia,serif; font-size:1.16rem; }
+    .topbar a { color:#fff; text-decoration:none; font-size:.82rem; font-weight:750; }
+    .topbar a:hover { color:var(--sun); }
+    .hero { position:relative; min-height:540px; display:flex; align-items:end; overflow:hidden; padding:64px max(7vw,28px); color:#fff; background:linear-gradient(112deg,rgba(5,5,5,.98) 10%,rgba(9,9,9,.86) 48%,rgba(9,9,9,.26)), radial-gradient(circle at 82% 23%, rgba(212,175,101,.92) 0 7%, transparent 7.5%), linear-gradient(150deg,#090909,#24201a 54%,#aaaeb4 55%,#3e3f40 100%); }
+    .hero::after { content:""; position:absolute; inset:auto -10% 0; height:150px; background:radial-gradient(ellipse at 50% 110%,transparent 0 55%,rgba(212,175,101,.50) 56% 59%,transparent 60%); opacity:.9; }
+    .hero-content { position:relative; z-index:1; max-width:760px; }
+    h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; }
+    .hero h1 { margin:0; font-size:clamp(3.4rem,8.2vw,6.4rem); line-height:.84; letter-spacing:-.06em; }
+    .hero h1 span { display:block; }
+    .hero h1 .hero-age { margin-left:clamp(22px,6vw,74px); color:var(--sun); font-size:1.18em; }
+    .hero h1 .hero-name { margin-top:8px; color:var(--aqua); font-size:.55em; letter-spacing:-.035em; }
+    .hero .lead { max-width:510px; margin:25px 0 0; font-size:clamp(1rem,2vw,1.3rem); line-height:1.55; }
+    .date-pill { display:inline-flex; gap:11px; align-items:center; margin-top:30px; padding:10px 14px; border:1px solid var(--sun); border-radius:999px; color:var(--sun); background:rgba(0,0,0,.35); font-size:.88rem; font-weight:850; }
+    main { max-width:1160px; margin:auto; padding:0 max(5vw,22px) 80px; }
+    .section { padding-top:74px; }
+    .section-heading { display:grid; grid-template-columns:auto 1fr; gap:17px; align-items:center; margin-bottom:26px; }
+    .section-heading .num { color:var(--coral); font-family:Georgia,serif; font-size:3.1rem; line-height:1; }
+    .section-heading h2 { margin:0; font-size:clamp(2rem,4vw,3.1rem); line-height:.95; }
+    .section-heading p { margin:5px 0 0; line-height:1.5; }
+    .schedule { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .schedule article,.contact-card,.room-card { border:1px solid var(--line); border-radius:17px; background:var(--cream); box-shadow:0 10px 25px rgba(0,0,0,.20); }
+    .schedule article { padding:24px; }
+    .time { color:var(--coral); font-size:1.7rem; font-weight:900; }
+    .schedule h3 { margin:9px 0 7px; font-size:1.45rem; }
+    .schedule p { margin:0; line-height:1.55; }
+    .contacts { display:grid; grid-template-columns:1fr 1.35fr; gap:16px; }
+    .contact-card { padding:27px; }
+    .icon { display:grid; width:40px; height:40px; place-items:center; border-radius:50%; color:var(--navy); background:var(--aqua); font-weight:900; }
+    .contact-card h3 { margin:16px 0 8px; font-size:1.7rem; }
+    .contact-card p { margin:6px 0; line-height:1.5; }
+    .contact-actions { display:flex; flex-wrap:wrap; gap:9px; margin-top:20px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:39px; padding:9px 13px; border:1px solid var(--sun); border-radius:999px; color:var(--sun); background:transparent; font-size:.82rem; font-weight:800; text-decoration:none; }
+    .button.primary { color:var(--navy); background:var(--sun); }
+    .button:hover { transform:translateY(-1px); }
+    .find { display:grid; grid-template-columns:1.1fr .9fr; gap:20px; align-items:end; padding:28px; border-radius:20px; color:#fff; background:var(--navy); }
+    .find h2 { margin:0; font-size:2.25rem; }
+    .find p { margin:7px 0 0; color:var(--aqua); line-height:1.5; }
+    .search { position:relative; }
+    .search input { width:100%; padding:15px 17px; border:0; border-radius:10px; color:#111; background:#f0eee8; font:inherit; outline:3px solid transparent; }
+    .search input:focus { outline-color:var(--sun); }
+    .search small { display:block; margin-top:8px; color:var(--aqua); }
+    .rooms { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .room-card { overflow:hidden; transition:transform .2s ease, box-shadow .2s ease; }
+    .room-card:hover { transform:translateY(-3px); box-shadow:0 16px 30px rgba(8,47,61,.12); }
+    .room-image { height:216px; width:100%; object-fit:cover; display:block; background:#2a2a2a; filter:saturate(.72) contrast(1.04); }
+    .room-image[alt*="Cabaña dúplex"] { object-position:center 30%; }
+    .room-info { padding:21px; }
+    .room-meta { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+    .tag { display:inline-block; padding:5px 9px; border:1px solid rgba(212,175,101,.45); border-radius:999px; color:var(--sun); background:#0d0d0e; font-size:.72rem; font-weight:850; }
+    .tag.warning { color:#181818; border-color:var(--aqua); background:var(--aqua); }
+    .room-info h3 { margin:12px 0 6px; font-size:1.65rem; line-height:1.05; }
+    .guests { margin:0; font-size:1rem; font-weight:750; line-height:1.55; }
+    .empty { grid-column:1/-1; padding:28px; border-radius:16px; color:var(--aqua); text-align:center; background:var(--cream); }
+    .note { margin:22px 0 0; padding:17px 19px; border-left:4px solid var(--sun); border-radius:8px; color:var(--aqua); background:#171718; line-height:1.55; }
+    footer { padding:32px 24px; color:var(--aqua); border-top:1px solid rgba(212,175,101,.28); background:var(--navy); text-align:center; }
+    footer p { margin:0; font-size:.9rem; }
+    @media (max-width:720px) { .topbar nav { display:none; } .hero { min-height:480px; } .schedule,.contacts,.find,.rooms { grid-template-columns:1fr; } .section { padding-top:52px; } .room-image { height:195px; } }
+  </style>
+</head>
+<body>
+  <section class="gate" id="gate" aria-live="polite">
+    <div class="gate-card">
+      <p class="eyebrow">Una escapada para celebrar</p>
+      <h1>Los 30<br>de Jonathan</h1>
+      <p>La invitación se habilita el 10 de octubre de 2026.</p>
+      <div id="countdown" aria-label="Cuenta regresiva"></div>
+      <button class="skip-button" id="skipCountdown" type="button">Ver la información ahora</button>
+    </div>
+  </section>
+
+  <div id="event" class="hidden">
+    <header class="topbar">
+      <div class="brand">LOS 30 DE JONATHAN</div>
+      <nav aria-label="Navegación">
+        <a href="#itinerario">Itinerario</a>
+        <a href="#contactos">Contactos</a>
+        <a href="#habitaciones">Habitaciones</a>
+      </nav>
+    </header>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">The Rooftop Hotel Beach & Club</p>
+        <h1><span class="hero-celebrate">Celebremos</span><span class="hero-age">los 30</span><span class="hero-name">de Jonathan</span></h1>
+        <p class="lead">Jonathan cumple 30. Celebremos junto al mar, con la mejor gente.</p>
+        <div class="date-pill">☀ Sábado, 10 de octubre de 2026</div>
+      </div>
+    </section>
+
+    <main>
+      <section class="section" id="itinerario">
+        <div class="section-heading">
+          <div class="num">01</div><div><h2>Itinerario</h2><p>Por favor, llega a tiempo para no retrasar la salida.</p></div>
+        </div>
+        <div class="schedule">
+          <article><div class="time">12:00 m.</div><h3>Llegada</h3><p>Residencia Maquilishuat #5. Punto de reunión para todo el grupo.</p></article>
+          <article><div class="time">1:00 p. m.</div><h3>Salida</h3><p>Salimos puntuales rumbo a The Rooftop Hotel Beach & Club.</p></article>
+          <article><div class="time">La Libertad</div><h3>Destino</h3><p>Rotonda SurfCity, Blvd. Conchalío 2. Playa, estadía y celebración.</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="contactos">
+        <div class="section-heading">
+          <div class="num">02</div><div><h2>Contactos clave</h2><p>Transporte y hotel reunidos en un solo lugar.</p></div>
+        </div>
+        <div class="contacts">
+          <article class="contact-card">
+            <div class="icon">↗</div><h3>Transporte</h3>
+            <p><strong>Carlos · BACER</strong></p><p>Encargado del traslado del grupo.</p>
+            <div class="contact-actions"><a class="button primary" href="tel:+50379213115">Llamar a Carlos</a><a class="button" target="_blank" rel="noopener" href="https://wa.me/50379213115">WhatsApp</a></div>
+          </article>
+          <article class="contact-card">
+            <div class="icon">⌂</div><h3>The Rooftop Hotel Beach & Club</h3>
+            <p>Rotonda SurfCity<br>Blvd. Conchalío 2, La Libertad 92103</p><p><strong>+503 7571 6179</strong><br>hotelnativosv@gmail.com</p>
+            <div class="contact-actions"><a class="button primary" href="tel:+50375716179">Llamar al hotel</a><a class="button" href="mailto:hotelnativosv@gmail.com">Enviar correo</a><a class="button" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=The%20Rooftop%20Hotel%20Beach%20%26%20Club%2C%20Rotonda%20SurfCity%2C%20La%20Libertad">Ver mapa</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="habitaciones">
+        <div class="section-heading">
+          <div class="num">03</div><div><h2>¿Dónde me quedo?</h2><p>Busca tu nombre para ver tu habitación y con quién la compartes.</p></div>
+        </div>
+        <div class="find"><div><h2>Distribución de habitaciones</h2><p>La asignación se basa en la hoja de organización del grupo.</p></div><label class="search"><input id="roomSearch" type="search" autocomplete="off" placeholder="Escribe tu nombre, por ejemplo: Kathy" aria-label="Buscar por nombre"><small id="resultCount">8 grupos de habitación</small></label></div>
+        <div class="rooms" id="rooms" aria-live="polite"></div>
+        <p class="note"><strong>Day pass:</strong> Oscar y Gracia viajan con transporte aparte. No aparecen en la asignación de habitaciones.</p>
+      </section>
+    </main>
+    <footer><p>Los 30 de Jonathan · Celebración de cumpleaños · The Rooftop Hotel Beach & Club · 10 de octubre de 2026</p></footer>
+  </div>
+
+  <script>
+    const unlockAt = new Date('2026-10-10T00:00:00-06:00').getTime();
+    const preview = new URLSearchParams(location.search).get('vista') === 'previa';
+    const gate = document.getElementById('gate');
+    const eventPage = document.getElementById('event');
+    const countdown = document.getElementById('countdown');
+    const skipCountdown = document.getElementById('skipCountdown');
+    function showEvent() { gate.classList.add('hidden'); eventPage.classList.remove('hidden'); }
+    function updateGate() {
+      const remaining = unlockAt - Date.now();
+      if (remaining <= 0 || preview) { showEvent(); return; }
+      const total = Math.ceil(remaining / 1000);
+      const values = [[Math.floor(total / 86400),'días'],[Math.floor(total % 86400 / 3600),'horas'],[Math.floor(total % 3600 / 60),'min'],[total % 60,'seg']];
+      countdown.innerHTML = values.map(([value,label]) => `<div class="count"><strong>${String(value).padStart(2,'0')}</strong><span>${label}</span></div>`).join('');
+    }
+    skipCountdown.addEventListener('click', showEvent);
+    updateGate(); setInterval(updateGate, 1000);
+
+    const roomGroups = [
+      {type:'Habitación Doble Vista al mar', capacity:2, people:'Cheque y Elena', image:'assets/habitaciones/image4.jpg'},
+      {type:'Habitación Triple', capacity:3, people:'Pochin, Pavo e Ivan', image:'assets/habitaciones/image1.jpg'},
+      {type:'Habitación Triple Superior', capacity:3, people:'Adri Larin, Kathy y Adri Mancia', image:'assets/habitaciones/image3.jpg'},
+      {type:'Habitación Triple Superior', capacity:3, people:'Andino, Macall y Luisao', image:'assets/habitaciones/image3.jpg'},
+      {type:'Habitación Cuádruple', capacity:4, people:'Qki, Heber, Mico y Luigi', image:'assets/habitaciones/image2.jpg'},
+      {type:'Habitación Cuádruple', capacity:4, people:'Jeff y Byron', image:'assets/habitaciones/image2.jpg'},
+      {type:'Cabaña dúplex de madera · Vista al mar', capacity:2, people:'Alvin y Fabi', image:'assets/habitaciones/image5.jpg'},
+      {type:'Cabaña dúplex de madera · Vista al mar', capacity:2, people:'Jonathan y Mich', image:'assets/habitaciones/image5.jpg'}
+    ];
+    const rooms = document.getElementById('rooms'); const search = document.getElementById('roomSearch'); const resultCount = document.getElementById('resultCount');
+    const occupantCount = people => people.split(/,| y | e /i).filter(Boolean).length;
+    function renderRooms(query='') {
+      const normalized = query.trim().toLocaleLowerCase('es');
+      const filtered = roomGroups.filter(room => `${room.type} ${room.people}`.toLocaleLowerCase('es').includes(normalized));
+      resultCount.textContent = normalized ? `${filtered.length} ${filtered.length === 1 ? 'resultado' : 'resultados'}` : '8 grupos de habitación';
+      rooms.innerHTML = filtered.length ? filtered.map(room => {
+        const assigned = occupantCount(room.people);
+        const incomplete = assigned < room.capacity;
+        return `<article class="room-card"><img class="room-image" src="${room.image}" alt="Referencia visual de ${room.type}"><div class="room-info"><div class="room-meta"><span class="tag">Capacidad: ${room.capacity}</span>${incomplete ? `<span class="tag warning">${assigned} asignados</span>` : '<span class="tag">Grupo completo</span>'}</div><h3>${room.type}</h3><p class="guests">${room.people}</p></div></article>`;
+      }).join('') : '<div class="empty">No encontramos ese nombre. Intenta con otro nombre o revisa la asignación completa.</div>';
+    }
+    search.addEventListener('input', event => renderRooms(event.target.value)); renderRooms();
+  </script>
+</body>
+</html>
+
