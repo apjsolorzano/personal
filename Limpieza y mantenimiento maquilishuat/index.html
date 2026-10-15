@@ -1,0 +1,2063 @@
+<!doctype html>
+<html lang="es-SV" data-theme="light" data-nav="horizontal" data-reading="sectioned">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="generator" content="Website Creation Studio base-document-v8">
+  <title>Guía operativa · Maquilishuat</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #fbfaf5;
+      --surface: #fffefa;
+      --surface-2: #f5f3ea;
+      --surface-3: #ebe8dc;
+      --text: #193b2b;
+      --muted: #5b7064;
+      --line: #d8dfd1;
+      --accent: #2d6045;
+      --accent-strong: #1d4933;
+      --accent-soft: #e5f0e4;
+      --mint: #669264;
+      --warning: #aa6b26;
+      --focus: #387a57;
+      --shadow: 0 1.2rem 3rem rgb(45 71 52 / 0.09);
+      --shadow-soft: 0 0.7rem 1.8rem rgb(45 71 52 / 0.06);
+      --radius-sm: 0.75rem;
+      --radius-md: 1.2rem;
+      --radius-lg: 1.8rem;
+      --workspace: 112rem;
+      --reading: 70ch;
+      --safe-inline: clamp(1rem, 0.4rem + 2.6vw, 4.5rem);
+      --safe-block: clamp(1.5rem, 1.05rem + 1.35vw, 3.25rem);
+      --section-gap: clamp(2rem, 1.45rem + 1.7vw, 4rem);
+      --column-gap: clamp(1rem, 0.78rem + 0.7vw, 1.8rem);
+      --card-padding: clamp(1.1rem, 0.9rem + 0.65vw, 1.8rem);
+      --header-h: 8.6rem;
+      --step--1: clamp(0.78rem, 0.75rem + 0.12vw, 0.92rem);
+      --step-0: clamp(0.96rem, 0.91rem + 0.18vw, 1.1rem);
+      --step-1: clamp(1.18rem, 1.08rem + 0.35vw, 1.45rem);
+      --step-2: clamp(1.5rem, 1.28rem + 0.72vw, 2.05rem);
+      --step-3: clamp(2rem, 1.62rem + 1.2vw, 3rem);
+      --step-4: clamp(2.6rem, 1.95rem + 2.1vw, 4.5rem);
+      --space-1: clamp(0.45rem, 0.4rem + 0.15vw, 0.65rem);
+      --space-2: clamp(0.75rem, 0.66rem + 0.28vw, 1rem);
+      --space-3: clamp(1rem, 0.85rem + 0.5vw, 1.45rem);
+      --space-4: clamp(1.45rem, 1.2rem + 0.8vw, 2.2rem);
+      --space-5: clamp(2rem, 1.6rem + 1.3vw, 3.2rem);
+      --space-6: clamp(2.8rem, 2.1rem + 2.2vw, 4.8rem);
+      --duration-fast: 150ms;
+      --duration-view: 300ms;
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --page: #07141c;
+      --surface: #0d202b;
+      --surface-2: #122a37;
+      --surface-3: #193643;
+      --text: #f2f7f9;
+      --muted: #a9bbc5;
+      --line: #304b58;
+      --accent: #72a0ff;
+      --accent-strong: #a8c2ff;
+      --accent-soft: #172f5d;
+      --mint: #25d5ba;
+      --warning: #ffc45b;
+      --focus: #9cc7ff;
+      --shadow: 0 1.2rem 3rem rgb(0 0 0 / 0.3);
+      --shadow-soft: 0 0.7rem 1.8rem rgb(0 0 0 / 0.2);
+    }
+
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+
+    html {
+      min-inline-size: 20rem;
+      background: var(--page);
+      scroll-padding-block-start: var(--header-h);
+    }
+
+    body {
+      min-inline-size: 20rem;
+      min-block-size: 100dvh;
+      margin: 0;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 10% 90%, color-mix(in srgb, var(--mint) 8%, transparent), transparent 28rem),
+        radial-gradient(circle at 95% 0%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 32rem),
+        var(--page);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: var(--step-0);
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+    }
+
+    img, svg, video, canvas { display: block; max-inline-size: 100%; block-size: auto; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { color: inherit; }
+    a { color: var(--accent-strong); text-underline-offset: 0.18em; }
+
+    :focus-visible {
+      outline: 0.2rem solid var(--focus);
+      outline-offset: 0.2rem;
+    }
+
+    .skip-link {
+      position: fixed;
+      inset-block-start: 0.5rem;
+      inset-inline-start: 0.5rem;
+      z-index: 200;
+      inline-size: 1px;
+      block-size: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      padding: 0.75rem 1rem;
+      border-radius: 0.6rem;
+      background: var(--text);
+      color: var(--surface);
+    }
+
+    .skip-link:focus {
+      inline-size: auto;
+      block-size: auto;
+      overflow: visible;
+      clip-path: none;
+    }
+
+    .app-header {
+      position: sticky;
+      inset-block-start: 0;
+      z-index: 80;
+      border-block-end: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+      background: color-mix(in srgb, var(--page) 88%, transparent);
+      backdrop-filter: blur(1rem) saturate(1.2);
+    }
+
+    .header-main,
+    .section-bar {
+      inline-size: min(calc(100% - var(--safe-inline) - var(--safe-inline)), var(--workspace));
+      margin-inline: auto;
+    }
+
+    .header-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      min-block-size: 4.5rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      min-inline-size: 0;
+      gap: 0.8rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      inline-size: 2.4rem;
+      block-size: 2.4rem;
+      border-radius: 0.8rem;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      box-shadow: 0 0.5rem 1.2rem color-mix(in srgb, var(--accent) 16%, transparent);
+    }
+
+    .brand-copy { min-inline-size: 0; }
+
+    .brand-copy h1 {
+      overflow: hidden;
+      margin: 0;
+      font-size: clamp(0.95rem, 0.87rem + 0.25vw, 1.15rem);
+      line-height: 1.2;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      letter-spacing: 0.11em;
+    }
+
+    .brand-copy span {
+      display: block;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: var(--step--1);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .header-tools {
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+      gap: 0.45rem;
+    }
+
+    .tool-button,
+    .copy-link,
+    .view-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      min-block-size: 2.75rem;
+      padding: 0.55rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      text-decoration: none;
+      transition:
+        transform var(--duration-fast) var(--ease-out),
+        border-color var(--duration-fast),
+        background var(--duration-fast),
+        color var(--duration-fast),
+        box-shadow var(--duration-fast);
+    }
+
+    .tool-button svg,
+    .view-action svg {
+      inline-size: 1.05rem;
+      block-size: 1.05rem;
+      flex: 0 0 auto;
+    }
+
+    .tool-button:hover,
+    .tool-button:focus-visible,
+    .copy-link:hover,
+    .copy-link:focus-visible,
+    .view-action:hover,
+    .view-action:focus-visible {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      box-shadow: var(--shadow-soft);
+      transform: translateY(-0.08rem);
+    }
+
+    .section-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      min-block-size: 4rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .section-bar::-webkit-scrollbar { display: none; }
+
+    .section-link {
+      display: inline-flex;
+      align-items: center;
+      flex: 0 0 auto;
+      gap: 0.45rem;
+      min-block-size: 2.75rem;
+      padding: 0.6rem 0.9rem;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: var(--step--1);
+      font-weight: 750;
+      text-decoration: none;
+      transition: color var(--duration-fast), background var(--duration-fast), border-color var(--duration-fast);
+    }
+
+    .section-link__index {
+      display: grid;
+      place-items: center;
+      inline-size: 1.45rem;
+      block-size: 1.45rem;
+      border-radius: 50%;
+      background: var(--surface-3);
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .section-link:hover,
+    .section-link:focus-visible {
+      color: var(--text);
+      background: var(--surface);
+      border-color: var(--line);
+    }
+
+    .section-link[aria-current="page"] {
+      color: var(--accent-strong);
+      background: var(--accent-soft);
+      border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
+    }
+
+    .section-link[aria-current="page"] .section-link__index {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .workspace-shell {
+      display: grid;
+      inline-size: min(calc(100% - var(--safe-inline) - var(--safe-inline)), var(--workspace));
+      margin-inline: auto;
+    }
+
+    .vertical-nav { display: none; }
+
+    main {
+      min-inline-size: 0;
+      min-block-size: calc(100dvh - var(--header-h));
+      padding-block: var(--safe-block) var(--section-gap);
+    }
+
+    .view {
+      min-inline-size: 0;
+      scroll-margin-block-start: var(--header-h);
+      animation: view-in var(--duration-view) var(--ease-out) both;
+    }
+
+    html[data-reading="continuous"] .view {
+      animation: none;
+    }
+
+    html[data-reading="continuous"] .view + .view {
+      margin-block-start: var(--section-gap);
+      padding-block-start: var(--section-gap);
+      border-block-start: 1px solid var(--line);
+    }
+
+    .view:focus { outline: none; }
+
+    @keyframes view-in {
+      from { opacity: 0; transform: translateY(0.65rem); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .view-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: var(--space-3);
+      margin-block-end: var(--section-gap);
+    }
+
+    .view-heading { display: grid; min-inline-size: 0; gap: var(--space-2); }
+    .view-heading :is(h2, h3, p) { overflow-wrap: anywhere; }
+    .eyebrow {
+      margin: 0;
+      color: var(--accent-strong);
+      font-size: var(--step--1);
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2, h3, h4 {
+      margin: 0;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+    }
+
+    h2 { max-inline-size: 18ch; font-size: var(--step-4); }
+    h3 { font-size: var(--step-2); }
+    h4 { font-size: var(--step-1); letter-spacing: -0.02em; }
+
+    .lede {
+      max-inline-size: var(--reading);
+      margin: 0;
+      color: var(--muted);
+      font-size: var(--step-1);
+      line-height: 1.5;
+    }
+
+    .view-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: var(--muted);
+      font-size: var(--step--1);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .view-layout,
+    .card-grid,
+    .evidence-grid {
+      display: grid;
+      gap: var(--column-gap);
+    }
+
+    .view-layout { grid-template-columns: minmax(0, 1fr); }
+    .card-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
+
+    .card,
+    .hero-card,
+    .decision-card,
+    .table-panel {
+      min-inline-size: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card {
+      display: grid;
+      align-content: start;
+      gap: var(--space-2);
+      padding: var(--card-padding);
+    }
+
+    .card p { max-inline-size: 60ch; margin: 0; color: var(--muted); }
+
+    .metric {
+      font-size: clamp(2.4rem, 1.85rem + 1.7vw, 4.1rem);
+      font-weight: 780;
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .hero-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(14rem, 0.7fr);
+      gap: var(--space-5);
+      min-block-size: clamp(20rem, 48vh, 34rem);
+      padding: var(--space-5);
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--surface) 96%, var(--accent)), var(--surface));
+    }
+
+    .hero-card::after {
+      position: absolute;
+      inset-inline-end: -8rem;
+      inset-block-end: -10rem;
+      inline-size: 28rem;
+      block-size: 28rem;
+      border: 5rem solid color-mix(in srgb, var(--accent) 9%, transparent);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero-card__copy {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      align-content: center;
+      gap: var(--space-3);
+    }
+
+    .hero-card__facts {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      align-content: center;
+      gap: var(--space-2);
+    }
+
+    .fact {
+      padding: var(--space-3);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: color-mix(in srgb, var(--surface) 84%, transparent);
+    }
+
+    .fact strong { display: block; font-size: var(--step-1); }
+    .fact span { color: var(--muted); font-size: var(--step--1); }
+
+    .table-panel { overflow: hidden; }
+    .table-panel__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-4);
+      border-block-end: 1px solid var(--line);
+    }
+
+    .table-wrap { overflow-x: auto; }
+    table {
+      inline-size: 100%;
+      min-inline-size: 42rem;
+      border-collapse: collapse;
+      font-variant-numeric: tabular-nums;
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      border-block-end: 1px solid var(--line);
+      text-align: start;
+      vertical-align: top;
+    }
+
+    th { color: var(--muted); font-size: var(--step--1); }
+    thead th { background: var(--surface-2); }
+    tbody tr:last-child > * { border-block-end: 0; }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      inline-size: fit-content;
+      gap: 0.4rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: var(--step--1);
+      font-weight: 750;
+    }
+
+    .status::before {
+      inline-size: 0.5rem;
+      block-size: 0.5rem;
+      border-radius: 50%;
+      background: currentColor;
+      content: "";
+    }
+
+    details {
+      margin-block-start: var(--space-2);
+      padding-block-start: var(--space-2);
+      border-block-start: 1px solid var(--line);
+    }
+
+    summary {
+      min-block-size: 2.75rem;
+      color: var(--accent-strong);
+      cursor: pointer;
+      font-weight: 750;
+    }
+
+    details p { margin-block: 0.5rem 0; }
+
+    .decision-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: var(--space-4);
+      padding: var(--space-5);
+      border-color: color-mix(in srgb, var(--accent) 32%, var(--line));
+      background: linear-gradient(135deg, var(--surface), var(--accent-soft));
+    }
+
+    .decision-card__copy { display: grid; gap: var(--space-2); }
+    .decision-card__copy p { max-inline-size: var(--reading); margin: 0; color: var(--muted); }
+
+    .toast {
+      position: fixed;
+      inset-inline: 1rem;
+      inset-block-end: 1rem;
+      z-index: 120;
+      inline-size: fit-content;
+      max-inline-size: calc(100% - 2rem);
+      margin-inline: auto;
+      padding: 0.72rem 1rem;
+      border-radius: 999px;
+      background: var(--text);
+      color: var(--surface);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(0.6rem);
+      transition: opacity 220ms var(--ease-out), transform 220ms var(--ease-out);
+    }
+
+    .toast[data-visible="true"] { opacity: 1; transform: translateY(0); }
+
+    .page-footer {
+      inline-size: min(calc(100% - var(--safe-inline) - var(--safe-inline)), var(--workspace));
+      margin-inline: auto;
+      padding-block: var(--space-3) 6.5rem;
+      border-block-start: 1px solid var(--line);
+      color: var(--muted);
+      font-size: var(--step--1);
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      inline-size: 1px !important;
+      block-size: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0 0 0 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    .lucide-icon {
+      inline-size: 1.15rem;
+      block-size: 1.15rem;
+      flex: 0 0 auto;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      pointer-events: none;
+    }
+
+    .icon-button {
+      position: relative;
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      inline-size: 2.75rem;
+      block-size: 2.75rem;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast), background var(--duration-fast), box-shadow var(--duration-fast);
+    }
+
+    .icon-button:hover,
+    .icon-button:focus-visible {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      box-shadow: var(--shadow-soft);
+      transform: translateY(-0.08rem);
+    }
+
+    [data-tooltip]::after {
+      position: absolute;
+      inset-inline-end: 0;
+      inset-block-end: calc(100% + 0.55rem);
+      z-index: 160;
+      max-inline-size: 15rem;
+      padding: 0.4rem 0.6rem;
+      border-radius: 0.55rem;
+      background: var(--text);
+      color: var(--surface);
+      content: attr(data-tooltip);
+      font-size: 0.72rem;
+      font-weight: 700;
+      line-height: 1.2;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(0.25rem);
+      transition: opacity var(--duration-fast), transform var(--duration-fast);
+      white-space: nowrap;
+    }
+
+    [data-tooltip]:hover::after,
+    [data-tooltip]:focus-visible::after {
+      opacity: 1;
+      transform: none;
+    }
+
+    .menu-trigger[aria-expanded="true"]::after { display: none; }
+
+    .copy-link {
+      position: relative;
+      inline-size: 2.75rem;
+      block-size: 2.75rem;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    .control-dock {
+      --dock-control-width: clamp(5.5rem, calc((100vw - 2.5rem) / 3), 8.75rem);
+      --dock-control-height: 3.25rem;
+      --dock-menu-size: var(--dock-control-height);
+      position: fixed;
+      inset-inline-end: max(1rem, env(safe-area-inset-right));
+      inset-block-end: max(1rem, env(safe-area-inset-bottom));
+      z-index: 140;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-navigator {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-navigator[hidden] { display: none; }
+
+    .section-jump {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      box-sizing: border-box;
+      inline-size: var(--dock-control-width);
+      block-size: var(--dock-control-height);
+      padding: 0.55rem 0.75rem;
+      border: 1px solid color-mix(in srgb, var(--line) 88%, transparent);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--surface) 92%, transparent);
+      color: var(--text);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(1rem) saturate(1.2);
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 780;
+      transition: background var(--duration-fast), color var(--duration-fast), transform var(--duration-fast) var(--ease-out);
+    }
+
+    .section-jump:hover,
+    .section-jump:focus-visible {
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      transform: translateY(-0.05rem);
+    }
+
+    .section-jump__label {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .menu-trigger {
+      box-sizing: border-box;
+      inline-size: var(--dock-menu-size) !important;
+      block-size: var(--dock-menu-size) !important;
+      border-radius: 50% !important;
+      border-color: color-mix(in srgb, var(--line) 88%, transparent) !important;
+      background: color-mix(in srgb, var(--surface) 92%, transparent) !important;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(1rem) saturate(1.2);
+    }
+
+    .menu-trigger[data-dirty="true"]::before {
+      position: absolute;
+      inset-inline-end: 0.28rem;
+      inset-block-start: 0.28rem;
+      inline-size: 0.52rem;
+      block-size: 0.52rem;
+      border: 2px solid var(--surface);
+      border-radius: 50%;
+      background: #e5484d;
+      content: "";
+    }
+
+    .control-menu {
+      position: absolute;
+      inset-inline-end: 0;
+      inset-block-end: calc(100% + 0.7rem);
+      inline-size: min(23rem, calc(100vw - 2rem));
+      max-block-size: min(38rem, calc(100dvh - 6rem));
+      overflow: auto;
+      padding: 0.75rem;
+      border: 1px solid var(--line);
+      border-radius: 1.25rem;
+      background: color-mix(in srgb, var(--surface) 96%, transparent);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(1.25rem) saturate(1.25);
+      transform-origin: 100% 100%;
+      animation: menu-in 170ms var(--ease-out);
+    }
+
+    @keyframes menu-in {
+      from { opacity: 0; transform: translateY(0.45rem) scale(0.985); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .control-menu__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.45rem 0.55rem 0.7rem;
+      border-block-end: 1px solid var(--line);
+    }
+
+    .control-menu__head strong { font-size: 0.9rem; }
+    .save-state {
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 750;
+    }
+
+    .save-state[data-dirty="true"] { color: #c73f43; }
+
+    .menu-section { padding-block: 0.65rem 0.15rem; }
+    .menu-section + .menu-section { border-block-start: 1px solid var(--line); }
+    .menu-section__title {
+      margin: 0 0 0.35rem;
+      padding-inline: 0.55rem;
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .menu-item {
+      display: grid;
+      grid-template-columns: 2.35rem minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 0.65rem;
+      inline-size: 100%;
+      min-block-size: 3.25rem;
+      padding: 0.45rem 0.55rem;
+      border: 0;
+      border-radius: 0.8rem;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      text-align: start;
+    }
+
+    .menu-item:hover,
+    .menu-item:focus-visible { background: var(--surface-2); }
+
+    .menu-item__icon {
+      display: grid;
+      place-items: center;
+      inline-size: 2.35rem;
+      block-size: 2.35rem;
+      border-radius: 0.7rem;
+      background: var(--surface-2);
+      color: var(--accent-strong);
+    }
+
+    .menu-item__copy { display: grid; min-inline-size: 0; }
+    .menu-item__copy strong { font-size: 0.84rem; line-height: 1.25; }
+    .menu-item__copy small { color: var(--muted); font-size: 0.7rem; line-height: 1.3; }
+    .menu-shortcut {
+      min-inline-size: 1.8rem;
+      padding: 0.22rem 0.38rem;
+      border: 1px solid var(--line);
+      border-radius: 0.45rem;
+      background: var(--surface-2);
+      color: var(--muted);
+      font: 750 0.65rem/1.1 ui-sans-serif, system-ui, sans-serif;
+      text-align: center;
+    }
+
+    html[data-editing="true"] [data-edit-id] {
+      border-radius: 0.22rem;
+      outline: 2px solid color-mix(in srgb, var(--accent) 62%, transparent);
+      outline-offset: 0.18rem;
+      cursor: text;
+    }
+
+    html[data-editing="true"] [data-edit-id]:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 0.22rem;
+    }
+
+    .author-toolbar {
+      position: fixed;
+      z-index: 150;
+      display: grid;
+      grid-template-columns: minmax(9rem, 1fr) repeat(5, auto);
+      align-items: end;
+      gap: 0.55rem;
+      inline-size: min(48rem, calc(100vw - 2rem));
+      padding: 0.75rem;
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: color-mix(in srgb, var(--surface) 94%, transparent);
+      color: var(--text);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(1rem);
+    }
+
+    .author-toolbar__target {
+      grid-column: 1 / -1;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 750;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .author-field { display: grid; gap: 0.22rem; min-inline-size: 0; }
+    .author-field > span { color: var(--muted); font-size: 0.66rem; font-weight: 750; }
+    .author-field select,
+    .author-field input,
+    .author-action {
+      min-block-size: 2.75rem;
+      border: 1px solid var(--line);
+      border-radius: 0.65rem;
+      background: var(--surface);
+      color: var(--text);
+    }
+    .author-field select { max-inline-size: 10rem; padding-inline: 0.55rem; }
+    .author-field input { inline-size: 5.2rem; padding-inline: 0.55rem; }
+    .author-action { min-inline-size: 2.5rem; padding-inline: 0.7rem; cursor: pointer; font-weight: 800; }
+    .author-action[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent-strong); }
+
+    @media (max-width: 47.99rem) {
+      .author-toolbar {
+        inset: auto 0 0 0 !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        inline-size: 100%;
+        max-block-size: min(62dvh, 31rem);
+        overflow-y: auto;
+        padding: 0.85rem max(0.85rem, env(safe-area-inset-right)) max(0.85rem, env(safe-area-inset-bottom)) max(0.85rem, env(safe-area-inset-left));
+        border-radius: 1.15rem 1.15rem 0 0;
+      }
+      .author-toolbar__target { grid-column: 1 / -1; }
+      .author-field select,
+      .author-field input { inline-size: 100%; max-inline-size: none; }
+    }
+
+    .studio-dialog {
+      inline-size: min(32rem, calc(100% - 2rem));
+      max-block-size: calc(100dvh - 2rem);
+      overflow: auto;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 1.25rem;
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: var(--shadow);
+    }
+
+    .studio-dialog::backdrop {
+      background: rgb(3 12 18 / 0.58);
+      backdrop-filter: blur(0.35rem);
+    }
+
+    .dialog-body { padding: var(--space-4); }
+    .dialog-head { display: flex; align-items: start; justify-content: space-between; gap: 1rem; }
+    .dialog-head h2 { font-size: var(--step-2); }
+    .shortcut-list {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.65rem 1rem;
+      margin: var(--space-3) 0 0;
+    }
+
+    .shortcut-list dt { font-weight: 800; }
+    .shortcut-list dd { margin: 0; color: var(--muted); }
+
+    @media (min-width: 48rem) {
+      :root { --safe-inline: clamp(2rem, 0.4rem + 2.6vw, 4.5rem); }
+      .evidence-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .view-layout--split { grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr); }
+    }
+
+    @media (min-width: 75rem) {
+      :root { --safe-inline: clamp(2.5rem, 0.4rem + 2.6vw, 4.5rem); }
+    }
+
+    @media (min-width: 112.5rem) {
+      :root { --safe-inline: clamp(3.5rem, 0.4rem + 2.6vw, 4.5rem); }
+    }
+
+    @media (min-width: 72rem) {
+      html[data-nav="vertical"] {
+        --header-h: 4.5rem;
+      }
+
+      html[data-nav="vertical"] .section-bar { display: none; }
+      html[data-nav="vertical"] .workspace-shell {
+        grid-template-columns: 15rem minmax(0, 1fr);
+        gap: var(--space-5);
+      }
+
+      html[data-nav="vertical"] .vertical-nav {
+        position: sticky;
+        inset-block-start: calc(var(--header-h) + var(--space-3));
+        align-self: start;
+        display: grid;
+        gap: 0.35rem;
+        max-block-size: calc(100dvh - var(--header-h) - var(--space-5));
+        padding-block: var(--space-5);
+        overflow-y: auto;
+      }
+
+      html[data-nav="vertical"] .vertical-nav .section-link {
+        inline-size: 100%;
+        border-radius: 0.8rem;
+      }
+
+      html[data-nav="vertical"] main {
+        border-inline-start: 1px solid var(--line);
+        padding-inline-start: var(--space-5);
+      }
+    }
+
+    @media (max-width: 47.99rem) {
+      :root { --header-h: 8.1rem; }
+      .header-main { min-block-size: 4.1rem; }
+      .brand-copy span,
+      .tool-button__label,
+      .view-meta { display: none; }
+      .tool-button { inline-size: 2.75rem; padding: 0; }
+      .section-bar { min-block-size: 4rem; }
+      .view-header { grid-template-columns: 1fr; }
+      .hero-card,
+      .decision-card { grid-template-columns: 1fr; }
+      .hero-card { min-block-size: 0; }
+      .control-dock { inset-inline-end: max(0.6rem, env(safe-area-inset-right)); inset-block-end: max(0.6rem, env(safe-area-inset-bottom)); }
+      .section-jump { max-inline-size: min(9rem, 35vw); gap: 0.25rem; padding-inline: 0.4rem; font-size: 0.68rem; }
+      .control-menu { inline-size: min(22rem, calc(100vw - 1.2rem)); }
+    }
+
+    @media (min-width: 180rem) {
+      html { font-size: 125%; }
+      :root {
+        --workspace: 150rem;
+        --step-0: 1.18rem;
+        --step--1: 1rem;
+      }
+      .card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .evidence-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (prefers-contrast: more) {
+      :root { --line: currentColor; --shadow: none; --shadow-soft: none; }
+      button, input, select, textarea { border-width: 2px; }
+    }
+
+    /* Cronograma operativo: componentes específicos */
+    .brand-mark { background: #185f78; }
+    .brand-copy > span { font-weight: 600; }
+    .view-heading .lede { max-inline-size: 74ch; }
+    .decision-note {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: var(--space-3);
+      align-items: center;
+      padding: var(--card-padding);
+      background: linear-gradient(135deg, #0d5166 0%, #1a6d73 100%);
+      border-radius: var(--radius-lg);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .decision-note h3, .decision-note p { color: inherit; }
+    .decision-note p { max-inline-size: 66ch; margin-block-end: 0; }
+    .decision-note .status { background: #e4f6f0; color: #12453e; }
+    .key-number { font-variant-numeric: tabular-nums; font-size: var(--step-3); font-weight: 800; white-space: nowrap; }
+    .quick-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--column-gap); margin-block-start: var(--space-3); }
+    .quick-fact { padding: var(--card-padding); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow-soft); }
+    .quick-fact strong { display: block; margin-block-end: .35rem; color: var(--accent-strong); }
+    .notice {
+      margin-block: var(--space-3);
+      padding: 1rem 1.15rem;
+      border-inline-start: .32rem solid var(--warning);
+      border-radius: var(--radius-sm);
+      background: color-mix(in srgb, var(--warning) 10%, var(--surface));
+      color: var(--text);
+    }
+    .notice strong { color: var(--warning); }
+    .notice--safe { border-inline-start-color: var(--mint); background: color-mix(in srgb, var(--mint) 9%, var(--surface)); }
+    .notice--safe strong { color: color-mix(in srgb, var(--mint) 78%, var(--text)); }
+    .schedule-table th:first-child, .schedule-table td:first-child { inline-size: 9rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .schedule-table td { vertical-align: top; }
+    .schedule-table .rest-row td, .schedule-table .rest-row th { background: color-mix(in srgb, var(--mint) 8%, var(--surface)); }
+    .schedule-table .dinner-row td, .schedule-table .dinner-row th { background: color-mix(in srgb, var(--warning) 12%, var(--surface)); }
+    .task-tag { display: inline-flex; inline-size: fit-content; align-items: center; gap: .35rem; padding: .25rem .55rem; border-radius: 999px; font-size: var(--step--1); font-weight: 750; line-height: 1.15; }
+    .task-tag--e1 { color: #0d4864; background: #dceef5; }
+    .task-tag--e2 { color: #5b3b06; background: #fff0cc; }
+    html[data-theme="dark"] .task-tag--e1 { color: #c7eeff; background: #153b4c; }
+    html[data-theme="dark"] .task-tag--e2 { color: #ffe2a6; background: #543b0b; }
+    .two-column { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(19rem, .92fr); gap: var(--column-gap); align-items: start; }
+    .rule-list, .check-list { display: grid; gap: .8rem; padding: 0; margin: 0; list-style: none; }
+    .rule-list li, .check-list li { position: relative; padding-inline-start: 1.7rem; }
+    .rule-list li::before, .check-list li::before { position: absolute; inset-inline-start: 0; font-weight: 800; }
+    .rule-list li::before { content: "•"; color: var(--accent); }
+    .check-list li::before { content: "✓"; color: var(--mint); }
+    .coverage-table th[scope="row"] { min-inline-size: 8.5rem; }
+    .coverage-table td { vertical-align: top; min-inline-size: 16rem; }
+    .coverage-table p { margin: .35rem 0 0; }
+    .coverage-table .muted-cell { color: var(--muted); font-style: italic; }
+    .handoff-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--column-gap); margin-block-start: var(--space-3); }
+    .handoff-grid .card { min-block-size: 100%; }
+    .alert-list { display: grid; gap: var(--space-3); }
+    .alert-card { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-3); padding: var(--card-padding); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow-soft); }
+    .alert-index { inline-size: 3rem; block-size: 3rem; display: grid; place-items: center; border-radius: 50%; background: color-mix(in srgb, var(--warning) 17%, var(--surface)); color: var(--warning); font-weight: 800; font-variant-numeric: tabular-nums; }
+    .alert-card h3 { margin-block: 0 .35rem; }
+    .alert-card p { margin-block: .35rem; }
+    .alert-card dl { display: grid; grid-template-columns: 8rem 1fr; gap: .45rem .8rem; margin: .85rem 0 0; }
+    .alert-card dt { font-weight: 750; color: var(--muted); }
+    .alert-card dd { margin: 0; }
+    .employer-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--column-gap); }
+    .employer-grid .card h3 { margin-block-start: 0; }
+    .source-line { margin-block-start: var(--space-4); font-size: var(--step--1); color: var(--muted); }
+    .source-line strong { color: var(--text); }
+    .schedule-picker {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--column-gap);
+      padding: var(--card-padding);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-soft);
+    }
+    .schedule-picker p { margin: 0; color: var(--muted); }
+    .employee-toggle { min-block-size: 3rem; padding: .65rem 1rem; border: 1px solid var(--accent); border-radius: .65rem; background: var(--accent); color: #fff; font: inherit; font-weight: 750; cursor: pointer; }
+    .employee-toggle:hover { background: var(--accent-strong); }
+    .employee-toggle:focus-visible { outline: 3px solid color-mix(in srgb, var(--focus) 42%, transparent); outline-offset: 3px; }
+    .schedule-summary { display: flex; flex-wrap: wrap; align-items: start; justify-content: space-between; gap: var(--space-2); margin-block: var(--space-3) var(--space-2); }
+    .schedule-summary h3 { margin: 0; }
+    .schedule-summary p { margin: .35rem 0 0; color: var(--muted); }
+    .schedule-summary .status { align-self: start; }
+    .hour-table { min-inline-size: 66rem; table-layout: fixed; }
+    .hour-table th:first-child, .hour-table td:first-child { inline-size: 8.5rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .hour-table td { vertical-align: top; overflow-wrap: anywhere; line-height: 1.35; }
+    .hour-table tr:not(.break-row):not(.dinner-row):nth-child(4n + 1) th, .hour-table tr:not(.break-row):not(.dinner-row):nth-child(4n + 1) td { background: #f3eef9; }
+    .hour-table tr:not(.break-row):not(.dinner-row):nth-child(4n + 3) th, .hour-table tr:not(.break-row):not(.dinner-row):nth-child(4n + 3) td { background: #eef6e9; }
+    .hour-table .break-row th, .hour-table .break-row td { background: #e8f3f2; color: var(--muted); }
+    .hour-table .dinner-row th, .hour-table .dinner-row td { background: #fbf0df; }
+    .hour-table td.cell--off { background: #f2f1ed !important; color: #778177; font-style: italic; }
+    .hour-table td.cell--transfer { background: #fff2cc !important; color: #765218; font-weight: 700; }
+    .hour-table thead th { background: #dfeee0; color: var(--accent-strong); }
+    .schedule-legend { display: flex; flex-wrap: wrap; gap: .5rem; margin-block-start: var(--space-3); }
+    .schedule-legend span { display: inline-flex; align-items: center; gap: .35rem; font-size: var(--step--1); color: var(--muted); }
+    .schedule-dot { inline-size: .7rem; block-size: .7rem; border-radius: 50%; background: var(--accent); }
+    .schedule-dot--rest { background: var(--mint); }
+    .schedule-dot--dinner { background: var(--warning); }
+    @media (max-width: 56rem) {
+      .quick-facts, .handoff-grid, .employer-grid { grid-template-columns: 1fr; }
+      .two-column { grid-template-columns: 1fr; }
+      .decision-note { grid-template-columns: 1fr; }
+      .key-number { font-size: var(--step-2); }
+      .coverage-table td { min-inline-size: 14rem; }
+      .schedule-picker { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 38rem) {
+      .section-navigator { display: none !important; }
+      .schedule-table th:first-child, .schedule-table td:first-child { inline-size: auto; }
+      .hour-table { min-inline-size: 58rem; table-layout: fixed; }
+      .hour-table th:first-child, .hour-table td:first-child { inline-size: 6.7rem; font-size: .73rem; }
+      .hour-table td { overflow-wrap: anywhere; }
+      .alert-card { grid-template-columns: 1fr; }
+      .alert-card dl { grid-template-columns: 1fr; gap: .15rem; }
+      .alert-card dd { margin-block-end: .55rem; }
+      .decision-note .key-number { display: none; }
+    }
+
+    @media (prefers-contrast: forced) {
+      :root {
+        --page: Canvas;
+        --surface: Canvas;
+        --surface-2: Canvas;
+        --surface-3: Canvas;
+        --text: CanvasText;
+        --muted: CanvasText;
+        --line: CanvasText;
+        --accent: LinkText;
+        --accent-strong: LinkText;
+        --accent-soft: Canvas;
+        --focus: Highlight;
+        --shadow: none;
+        --shadow-soft: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media print {
+      :root {
+        color-scheme: light;
+        --page: #fff;
+        --surface: #fff;
+        --surface-2: #fff;
+        --surface-3: #fff;
+        --text: #000;
+        --muted: #333;
+        --line: #888;
+        --shadow: none;
+        --shadow-soft: none;
+      }
+      .app-header, .vertical-nav, .copy-link, .toast, .page-footer, .control-dock, .studio-dialog, .author-toolbar { display: none !important; }
+      .workspace-shell { display: block; inline-size: 100%; }
+      main { border: 0 !important; padding: 0 !important; }
+      .view[hidden] { display: block !important; }
+      .view { break-after: page; animation: none; }
+      .hero-card { min-block-size: 0; }
+      details > * { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+  <!-- Lucide icon subset. Lucide is licensed under ISC; Feather-derived icons under MIT.
+       Copyright (c) Lucide Contributors and Cole Bemis. https://lucide.dev/license -->
+  <svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden">
+    <symbol id="wcs-icon-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="wcs-icon-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="wcs-icon-more-horizontal" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+    <symbol id="wcs-icon-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></symbol>
+    <symbol id="wcs-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="wcs-icon-rows" viewBox="0 0 24 24"><rect width="18" height="5" x="3" y="3" rx="1"/><rect width="18" height="5" x="3" y="10" rx="1"/><rect width="18" height="5" x="3" y="17" rx="1"/></symbol>
+    <symbol id="wcs-icon-panel-top" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/></symbol>
+    <symbol id="wcs-icon-panel-left" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></symbol>
+    <symbol id="wcs-icon-panel-top-close" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 14l3 3 3-3"/></symbol>
+    <symbol id="wcs-icon-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+    <symbol id="wcs-icon-pencil" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+    <symbol id="wcs-icon-save" viewBox="0 0 24 24"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></symbol>
+    <symbol id="wcs-icon-maximize" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></symbol>
+    <symbol id="wcs-icon-keyboard" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 16h10"/></symbol>
+    <symbol id="wcs-icon-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="wcs-icon-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z"/><path d="M9 21v-6h6v6M8 10h.01M16 10h.01"/></symbol>
+  </svg>
+
+  <header class="app-header">
+    <div class="header-main">
+      <a class="brand" href="#cronograma" data-view-link>
+        <span class="brand-mark" aria-hidden="true"><svg class="lucide-icon"><use href="#wcs-icon-home"/></svg></span>
+        <span class="brand-copy"><h1>MAQUILISHUAT</h1><span>Guía operativa para el hogar</span></span>
+      </a>
+    </div>
+    <nav class="section-bar" aria-label="Secciones principales">
+      <a class="section-link" href="#cronograma" data-view-link><span class="section-link__index">01</span>Cronograma</a>
+      <a class="section-link" href="#alertas" data-view-link><span class="section-link__index">02</span>Alertas tempranas</a>
+      <a class="section-link" href="#empleador" data-view-link><span class="section-link__index">03</span>Consideraciones</a>
+    </nav>
+  </header>
+
+  <div class="workspace-shell">
+    <nav class="vertical-nav" aria-label="Secciones principales en formato vertical">
+      <a class="section-link" href="#cronograma" data-view-link><span class="section-link__index">01</span>Cronograma</a>
+      <a class="section-link" href="#alertas" data-view-link><span class="section-link__index">02</span>Alertas tempranas</a>
+      <a class="section-link" href="#empleador" data-view-link><span class="section-link__index">03</span>Consideraciones</a>
+    </nav>
+
+    <main id="main-content">
+      <section class="view" id="cronograma" data-view="cronograma" data-layout-profile="process" tabindex="-1" aria-labelledby="cronograma-title">
+        <header class="view-header" data-qa-box="view-header">
+          <div class="view-heading" data-qa-text-stack>
+            <p class="eyebrow">01 · Maquilishuat · Guía de trabajo</p>
+            <h2 id="cronograma-title">Una semana clara, con relevos que sí cubren la casa.</h2>
+            <p class="lede">Seleccione E1 o E2 para ver su flujo de trabajo. Martes a jueves y sábado a domingo son jornadas completas; viernes y lunes son días de relevo a las 12:00 PM.</p>
+          </div>
+          <div class="view-meta"><span>Horario visible, sin tareas superpuestas</span><button class="copy-link" type="button" data-copy-view="cronograma" aria-label="Copiar enlace a Cronograma" data-tooltip="Copiar enlace"><svg class="lucide-icon" aria-hidden="true"><use href="#wcs-icon-link"/></svg></button></div>
+        </header>
+
+        <div class="schedule-picker" data-no-edit aria-label="Selector de cronograma">
+          <div><strong id="employee-label">Empleada 1 · Lunes a viernes</strong><p>Vista semanal completa. En móvil, deslice la tabla horizontalmente.</p></div>
+          <button class="employee-toggle" id="employee-toggle" type="button" aria-pressed="false">Ver Empleada 2</button>
+        </div>
+
+        <div class="schedule-summary" aria-live="polite">
+          <div><h3 id="schedule-title">Empleada 1 · Semana laboral</h3><p id="schedule-note">Jornada de 6:30 AM a 7:00 PM. Las tareas de ropa, sala/oficina y planchado tienen bloques separados.</p></div>
+          <span class="status" id="schedule-status">Horario completo</span>
+        </div>
+        <div class="table-panel">
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Actividades semanales por hora">
+            <table class="hour-table"><thead id="schedule-head"></thead><tbody id="schedule-body"></tbody></table>
+          </div>
+        </div>
+        <div class="schedule-legend" aria-label="Leyenda"><span><i class="schedule-dot" aria-hidden="true"></i> Actividad de trabajo</span><span><i class="schedule-dot schedule-dot--rest" aria-hidden="true"></i> Descanso</span><span><i class="schedule-dot schedule-dot--dinner" aria-hidden="true"></i> Cena y cierre de cocina</span></div>
+        <p class="source-line" id="schedule-exception">La ropa delicada se separa y se asigna a E3 o a un servicio especializado. No se incorpora al planchado regular de E1.</p>
+      </section>
+
+      <section class="view" id="alertas" data-view="alertas" data-layout-profile="decision" tabindex="-1" aria-labelledby="alertas-title" hidden inert>
+        <header class="view-header"><div class="view-heading"><p class="eyebrow">02 · Señales que requieren acción</p><h2 id="alertas-title">Alertas tempranas de carga, capacidad y deserción.</h2><p class="lede">No son sanciones ni juicios sobre la trabajadora. Son indicadores para ajustar la operación antes de que haya errores, agotamiento o salida del personal.</p></div><div class="view-meta"><span>Base: notas de rutina y cronograma previo</span><button class="copy-link" type="button" data-copy-view="alertas" aria-label="Copiar enlace a Alertas tempranas" data-tooltip="Copiar enlace"><svg class="lucide-icon" aria-hidden="true"><use href="#wcs-icon-link"/></svg></button></div></header>
+
+        <div class="alert-list">
+          <article class="alert-card"><div class="alert-index" aria-hidden="true">01</div><div><span class="status">Capacidad y calidad</span><h3>Planchado de prendas delicadas y alto volumen</h3><p><strong>Señal observada:</strong> la nota indica que sería conveniente contratar a otra persona para planchar, porque hay mucha ropa y prendas delicadas; expresa que ese trabajo toma tiempo.</p><dl><dt>Lectura operativa</dt><dd>Alerta temprana de capacidad, especialización y riesgo de daño a prendas; no una falta disciplinaria.</dd><dt>Respuesta</dt><dd>Separar ropa delicada desde el origen, limitar el planchado regular a 45 minutos por sesión y asignar el excedente o lo delicado a E3 o a servicio especializado.</dd><dt>No hacer</dt><dd>Convertir el planchado en tarea de cierre nocturno o exigirlo junto con limpieza profunda y cena.</dd></dl></div></article>
+          <article class="alert-card"><div class="alert-index" aria-hidden="true">02</div><div><span class="status">Jornada extendida</span><h3>Rutina registrada hasta las 9:30 PM–10:00 PM</h3><p><strong>Señal observada:</strong> las notas de rutina incluyen preparación de cena, cena y planchado hasta el final de la noche.</p><dl><dt>Lectura operativa</dt><dd>La secuencia combina comidas, lavandería, limpieza y cierre en una misma jornada; el sistema no tiene límite de carga.</dd><dt>Respuesta</dt><dd>Reservar de 5:30 PM a 7:00 PM para cena y cierre de cocina. Si no hay cena, ese tramo se usa para adelantar el menú siguiente, lavar trastes y desechar residuos; nunca para sumar limpieza pesada.</dd><dt>No hacer</dt><dd>Pedir que “aproveche” el tiempo ahorrado por el robot para extender la lista del día.</dd></dl></div></article>
+          <article class="alert-card"><div class="alert-index" aria-hidden="true">03</div><div><span class="status">Conflicto de prioridades</span><h3>La cena compite con el cierre de limpieza y ropa</h3><p><strong>Señal observada:</strong> el servicio de cena se concentra entre 6:00 PM y 7:00 PM, pero el flujo anterior también dejaba planchado y orden para la noche.</p><dl><dt>Lectura operativa</dt><dd>Si se exige cena servida, el final de la jornada debe tener una sola misión: comida y retiro esencial.</dd><dt>Respuesta</dt><dd>Definir cada día, antes de las 3:30 PM, si habrá servicio de cena. Si la respuesta es sí, congelar tareas adicionales.</dd><dt>No hacer</dt><dd>Introducir cambios de menú o solicitudes no urgentes después de las 3:30 PM.</dd></dl></div></article>
+          <article class="alert-card"><div class="alert-index" aria-hidden="true">04</div><div><span class="status">Falta de trazabilidad</span><h3>Pedidos y pendientes sin relevo escrito</h3><p><strong>Señal observada:</strong> múltiples tareas diarias aumentan la probabilidad de duplicar limpieza, perder compras o trasladar pendientes a la noche.</p><dl><dt>Lectura operativa</dt><dd>El problema no es la persona: es un flujo sin una lista corta de entrega y sin límite de trabajo en curso.</dd><dt>Respuesta</dt><dd>Usar una bitácora de 15 minutos lunes y viernes con menú, ropa, robot, compras y un único pendiente prioritario.</dd><dt>No hacer</dt><dd>Agregar instrucciones verbales al día en curso sin indicar qué tarea se pospone.</dd></dl></div></article>
+          <article class="alert-card"><div class="alert-index" aria-hidden="true">05</div><div><span class="status">Capacidad por número de personas</span><h3>Atender a más de cinco personas puede sobrecargar a E1</h3><p><strong>Escenario informado:</strong> se estima una presencia habitual de más de cinco y menos de ocho personas, con cuatro personas prioritarias. El menú es único para todos.</p><dl><dt>Lectura operativa</dt><dd>Un menú único reduce variedad de preparación, pero no reduce porciones, trastes, superficies, ropa ni tiempos de servicio. Si E1 debe atender de forma completa a más de cinco personas, además de lavandería y limpieza, una sola tarea principal diaria deja de ser suficiente.</dd><dt>Respuesta</dt><dd>Definir que E1 presta servicio completo a las cuatro personas prioritarias. Sandra y Pablo no trasladan automáticamente su ropa personal a E1; para el resto, establecer autoservicio o apoyo definido. Cuando el servicio completo supera cinco personas, retirar una tarea profunda o activar apoyo de E2/E3.</dd><dt>No hacer</dt><dd>Asumir que el mismo menú implica la misma carga que atender a cuatro personas, ni convertir el excedente en trabajo nocturno.</dd></dl></div></article>
+        </div>
+        <p class="source-line"><strong>Fuente de observaciones:</strong> transcripción de notas manuscritas de rutina y cronograma operativo previo. Las alertas describen riesgos de organización, no evalúan el desempeño personal.</p>
+      </section>
+
+      <section class="view" id="empleador" data-view="empleador" data-layout-profile="decision" tabindex="-1" aria-labelledby="empleador-title" hidden inert>
+        <header class="view-header"><div class="view-heading"><p class="eyebrow">03 · Decisiones del empleador</p><h2 id="empleador-title">La jornada sostenible depende de reglas que el empleador debe proteger.</h2><p class="lede">La distribución propuesta funciona si las prioridades se deciden con anticipación y las herramientas liberan carga, en vez de generar más tareas.</p></div><div class="view-meta"><span>Aplicación recomendada: prueba de 4 semanas</span><button class="copy-link" type="button" data-copy-view="empleador" aria-label="Copiar enlace a Consideraciones del empleador" data-tooltip="Copiar enlace"><svg class="lucide-icon" aria-hidden="true"><use href="#wcs-icon-link"/></svg></button></div></header>
+
+        <article class="decision-note"><div><span class="status">Decisión crítica</span><h3>Defina antes de las 3:30 PM si se servirá cena.</h3><p>Una respuesta tardía produce el mismo problema que muestran las notas: la cena se convierte en una extensión de la limpieza, la ropa y el planchado. Si habrá cena, el bloque de 5:30 PM a 7:00 PM queda reservado.</p></div><div class="key-number" aria-label="Horario de servicio de cena de seis a siete de la noche">6–7 PM</div></article>
+
+        <div class="employer-grid" style="margin-block-start: var(--space-3)">
+          <article class="card"><h3>1. Control de carga</h3><ul class="rule-list"><li>Programar solo una tarea central por día: zona profunda, ropa de cama, tarea mensual o planchado; no todas.</li><li>Todo pedido nuevo desplaza una actividad ya programada. No se agrega “por encima”.</li><li>El excedente mensual, los eventos y la carga especial pasan a E3 o al siguiente ciclo.</li></ul></article>
+          <article class="card"><h3>2. Cena y hora de salida</h3><ul class="rule-list"><li>La jornada termina a las 7:00 PM haya o no haya cena; de 5:30 PM a 7:00 PM se reserva para cocina y cierre.</li><li>Si hay cena: servir de 6:00 PM a 6:30 PM y, de 6:30 PM a 7:00 PM, lavar trastes, desechar residuos y ordenar lo esencial.</li><li>Si no hay cena: ese mismo tramo se usa para adelantar el menú siguiente y cerrar cocina; no para limpieza pesada ni planchado.</li></ul></article>
+          <article class="card"><h3>3. Descansos y trato operativo</h3><ul class="rule-list"><li>Proteger 12:00 PM–2:00 PM para comida y reposo, sin interrupciones operativas.</li><li>Respetar las pausas de mañana y tarde; no son tiempo “disponible”.</li><li>Ofrecer habitación adecuada, alimentos, herramientas funcionales y comunicación respetuosa.</li></ul></article>
+          <article class="card"><h3>4. Herramientas que simplifican</h3><ul class="rule-list"><li>Robot aspirador/trapeador: sala, pasillos y oficina durante el Foco 1; limpieza de depósito martes y viernes.</li><li>Cestas por categoría: blanca, color, cama y delicada; evita clasificar y lavar dos veces.</li><li>Menú semanal antes de las 10:00 AM; evita cambios y compras de último momento.</li></ul></article>
+        </div>
+
+        <div class="two-column" style="margin-block-start: var(--space-3)">
+          <article class="card"><span class="eyebrow">Vacaciones y contingencias</span><h3>Cómo proteger la cobertura</h3><ul class="check-list"><li>Vacaciones de E1: E2 cubre el esquema de semana; la agencia aporta reemplazo para el bloque de viernes a lunes.</li><li>Ausencia imprevista: E3 cubre comidas, cocina, baño principal y ropa indispensable. Se suspenden limpieza profunda y planchado.</li><li>Evento o festivo: E3 se contrata con horario y alcance escritos; el apoyo no elimina el descanso de E1 o E2.</li><li>Falla del robot o lavandería: se mantiene solo lo esencial y lo no crítico se reprograma; no se prolonga la jornada.</li></ul></article>
+          <article class="card"><span class="eyebrow">Prueba y validación</span><h3>Revisar al finalizar cuatro semanas</h3><ul class="check-list"><li>¿Hubo días que terminaron después de las 7:00 PM? Identificar por qué.</li><li>¿Se respetó el descanso de 12:00 PM–2:00 PM y las pausas breves?</li><li>¿Cuántas tareas se movieron a E3, siguiente ciclo o proveedor especializado?</li><li>¿Las bitácoras de viernes y lunes evitaron duplicar trabajo?</li><li>¿Las trabajadoras reportaron carga, dificultades o falta de herramientas?</li></ul></article>
+        </div>
+        <p class="source-line"><strong>Supuesto pendiente de confirmación:</strong> E1 cubre lunes a viernes hasta el viernes a las 12:00 PM y E2 cubre desde el viernes a las 12:00 PM hasta el lunes a las 12:00 PM. Ajuste la matriz antes de aplicar si el relevo real es distinto.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="page-footer">Cronograma operativo semanal · <span data-current-year></span> · Documento interno para validar carga, relevos y descansos.</footer>
+
+  <div class="control-dock" data-control-dock aria-label="Controles del documento">
+    <div class="control-menu" id="control-menu" data-control-menu hidden>
+      <div class="control-menu__head">
+        <strong>Visualización</strong>
+        <span class="save-state" data-save-state data-dirty="false">Sin cambios</span>
+      </div>
+      <section class="menu-section" aria-labelledby="appearance-menu-title">
+        <h2 class="menu-section__title" id="appearance-menu-title">Apariencia</h2>
+        <button class="menu-item" type="button" data-toggle-theme aria-keyshortcuts="T">
+          <span class="menu-item__icon"><svg class="lucide-icon" aria-hidden="true"><use data-theme-icon href="#wcs-icon-moon"/></svg></span>
+          <span class="menu-item__copy"><strong data-theme-label>Tema oscuro</strong><small>Cambiar contraste del documento</small></span>
+          <kbd class="menu-shortcut">T</kbd>
+        </button>
+        <button class="menu-item" type="button" data-toggle-reading aria-keyshortcuts="V">
+          <span class="menu-item__icon"><svg class="lucide-icon" aria-hidden="true"><use data-reading-icon href="#wcs-icon-rows"/></svg></span>
+          <span class="menu-item__copy"><strong data-reading-label>Scroll continuo</strong><small>Alternar lectura completa o por secciones</small></span>
+          <kbd class="menu-shortcut">V</kbd>
+        </button>
+        <button class="menu-item" type="button" data-toggle-nav aria-keyshortcuts="L">
+          <span class="menu-item__icon"><svg class="lucide-icon" aria-hidden="true"><use data-nav-icon href="#wcs-icon-panel-left"/></svg></span>
+          <span class="menu-item__copy"><strong data-nav-label>Menú vertical</strong><small>Cambiar la ubicación de las secciones</small></span>
+          <kbd class="menu-shortcut">L</kbd>
+        </button>
+        <button class="menu-item" type="button" data-toggle-section-nav aria-pressed="true" aria-keyshortcuts="G">
+          <span class="menu-item__icon"><svg class="lucide-icon" aria-hidden="true"><use href="#wcs-icon-panel-top"/></svg></span>
+          <span class="menu-item__copy"><strong data-section-nav-label>Ocultar navegación rápida</strong><small>Botones con el nombre de la sección anterior y siguiente</small></span>
+          <kbd class="menu-shortcut">G</kbd>
+        </button>
+      </section>
+      <section class="menu-section" aria-labelledby="document-menu-title">
+        <h2 class="menu-section__title" id="document-menu-title">Documento</h2>
+        <button class="menu-item" type="button" data-copy-current>
+          <span class="menu-item__icon"><svg class="lucide-icon" aria-hidden="true"><use href="#wcs-icon-link"/></svg></span>
+          <span class="menu-item__copy"><strong>Copiar enlace</strong><small>Enlace directo a la sección actual</small></span>
+        </button>
+        <button class="menu-item" type="button" data-toggle-edit aria-keyshortcuts="E">
+          <span class="menu-item__icon"><svg class="lucide-icon" aria-hidden="true"><use href="#wcs-icon-pencil"/></svg></span>
+          <span class="menu-item__copy"><strong data-edit-label>Editar textos</strong><small>Modificar contenido directamente</small></span>
+          <kbd class="menu-shortcut">E</kbd>
+        </button>
+        <button class="menu-item" type="button" data-save-document aria-keyshortcuts="Control+S Meta+S">
+          <span class="menu-item__icon"><svg class="lucide-icon" aria-hidden="true"><use href="#wcs-icon-save"/></svg></span>
+          <span class="menu-item__copy"><strong>Guardar HTML</strong><small>Actualizar el archivo o descargar una copia</small></span>
+          <kbd class="menu-shortcut">⌘S</kbd>
+        </button>
+      </section>
+      <section class="menu-section" aria-labelledby="tools-menu-title">
+        <h2 class="menu-section__title" id="tools-menu-title">Herramientas</h2>
+        <button class="menu-item" type="button" data-fullscreen aria-keyshortcuts="F">
+          <span class="menu-item__icon"><svg class="lucide-icon" aria-hidden="true"><use href="#wcs-icon-maximize"/></svg></span>
+          <span class="menu-item__copy"><strong>Pantalla completa</strong><small>Usar todo el espacio disponible</small></span>
+          <kbd class="menu-shortcut">F</kbd>
+        </button>
+        <button class="menu-item" type="button" data-show-shortcuts aria-keyshortcuts="?">
+          <span class="menu-item__icon"><svg class="lucide-icon" aria-hidden="true"><use href="#wcs-icon-keyboard"/></svg></span>
+          <span class="menu-item__copy"><strong>Atajos</strong><small>Ver controles de teclado</small></span>
+          <kbd class="menu-shortcut">?</kbd>
+        </button>
+      </section>
+    </div>
+    <div class="section-navigator" data-section-navigator aria-label="Navegación rápida entre secciones">
+      <button class="section-jump" type="button" data-prev-section><svg class="lucide-icon" aria-hidden="true"><use href="#wcs-icon-chevron-left"/></svg><span class="section-jump__label" data-prev-label>Decisión</span></button>
+      <button class="section-jump" type="button" data-next-section><span class="section-jump__label" data-next-label>Evidencia</span><svg class="lucide-icon" aria-hidden="true"><use href="#wcs-icon-chevron-right"/></svg></button>
+    </div>
+    <button class="icon-button menu-trigger" type="button" data-menu-trigger aria-label="Abrir opciones" aria-expanded="false" aria-controls="control-menu" data-tooltip="Opciones" data-dirty="false"><svg class="lucide-icon" aria-hidden="true"><use href="#wcs-icon-more-horizontal"/></svg></button>
+  </div>
+
+  <dialog class="studio-dialog" data-shortcuts-dialog>
+    <div class="dialog-body">
+      <div class="dialog-head">
+        <div><p class="eyebrow">Ayuda</p><h2>Atajos del documento</h2></div>
+        <button class="icon-button" type="button" data-close-shortcuts aria-label="Cerrar atajos"><svg class="lucide-icon" aria-hidden="true"><use href="#wcs-icon-x"/></svg></button>
+      </div>
+      <dl class="shortcut-list">
+        <dt>← / →</dt><dd>Sección anterior o siguiente</dd>
+        <dt>T</dt><dd>Cambiar tema</dd>
+        <dt>V</dt><dd>Alternar vista por secciones y scroll continuo</dd>
+        <dt>L</dt><dd>Cambiar navegación horizontal o vertical</dd>
+        <dt>G</dt><dd>Mostrar u ocultar la navegación rápida</dd>
+        <dt>E</dt><dd>Activar o cerrar edición de textos</dd>
+        <dt>⌘ / Ctrl + S</dt><dd>Guardar el HTML</dd>
+        <dt>F</dt><dd>Pantalla completa</dd>
+        <dt>M</dt><dd>Abrir o cerrar opciones</dd>
+        <dt>?</dt><dd>Mostrar esta ayuda</dd>
+      </dl>
+    </div>
+  </dialog>
+  <div class="toast" role="status" aria-live="polite" aria-atomic="true" data-toast></div>
+
+  <section class="author-toolbar" data-author-toolbar data-no-edit aria-label="Formato del texto seleccionado" hidden>
+    <div class="author-toolbar__target" data-author-target>Seleccione un texto editable</div>
+    <label class="author-field"><span>Familia</span><select data-author-family><option value="">Original</option><option value="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">Sistema</option><option value="Georgia, 'Times New Roman', serif">Serif</option></select></label>
+    <label class="author-field"><span data-author-size-label>Tamaño</span><input data-author-size type="number" inputmode="numeric" step="1" aria-label="Tamaño del texto"></label>
+    <label class="author-field"><span>Color</span><select data-author-color><option value="">Original</option><option value="var(--text)">Texto</option><option value="var(--muted)">Secundario</option><option value="var(--accent-strong)">Marca</option><option value="var(--mint)">Positivo</option><option value="var(--warning)">Advertencia</option></select></label>
+    <label class="author-field"><span>Peso</span><select data-author-weight><option value="">Original</option><option value="400">Regular</option><option value="600">Semibold</option><option value="700">Bold</option><option value="800">Extra bold</option></select></label>
+    <label class="author-field"><span>Alineación</span><select data-author-align><option value="">Original</option><option value="start">Inicio</option><option value="center">Centro</option><option value="end">Final</option></select></label>
+    <button class="author-action" type="button" data-author-italic aria-pressed="false" aria-label="Alternar cursiva"><em>I</em></button>
+    <button class="author-action" type="button" data-author-reset>Restablecer</button>
+    <button class="author-action" type="button" data-author-close aria-label="Cerrar formato">Cerrar</button>
+  </section>
+
+  <script type="application/json" id="website-project-data">
+    {"schema_version":"1.0","project_id":"cronograma-operativo-sostenible","runtime":"base-document-v8"}
+  </script>
+  <script>
+    (() => {
+      const $ = (selector, scope = document) => scope.querySelector(selector);
+      const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
+      const root = document.documentElement;
+      const views = $$("[data-view]");
+      const links = $$("[data-view-link]");
+      const themeButton = $("[data-toggle-theme]");
+      const navButton = $("[data-toggle-nav]");
+      const readingButton = $("[data-toggle-reading]");
+      const menu = $("[data-control-menu]");
+      const menuTrigger = $("[data-menu-trigger]");
+      const shortcutsDialog = $("[data-shortcuts-dialog]");
+      const toast = $("[data-toast]");
+      const authorToolbar = $("[data-author-toolbar]");
+      const authorFamily = $("[data-author-family]");
+      const authorSize = $("[data-author-size]");
+      const authorColor = $("[data-author-color]");
+      const authorWeight = $("[data-author-weight]");
+      const authorAlign = $("[data-author-align]");
+      const authorItalic = $("[data-author-italic]");
+      const validIds = new Set(views.map((view) => view.id));
+      const defaultView = views[0]?.id || "resumen";
+      let toastTimer = 0;
+      let activeViewId = defaultView;
+      let readingObserver = null;
+      let editing = false;
+      let dirty = false;
+      let fileHandle = null;
+      let activeEditable = null;
+
+      const showToast = (message) => {
+        window.clearTimeout(toastTimer);
+        toast.textContent = message;
+        toast.dataset.visible = "true";
+        toastTimer = window.setTimeout(() => { toast.dataset.visible = "false"; }, 1800);
+      };
+
+      const idFromLocation = () => {
+        const id = decodeURIComponent(window.location.hash.slice(1));
+        return validIds.has(id) ? id : defaultView;
+      };
+
+      const viewLabel = (id) => {
+        const link = $(".section-bar [href='#" + CSS.escape(id) + "']");
+        const label = Array.from(link?.childNodes || [])
+          .filter((node) => node.nodeType === Node.TEXT_NODE)
+          .map((node) => node.textContent.trim())
+          .filter(Boolean)
+          .join(" ");
+        return label || document.getElementById(id)?.querySelector("h2")?.textContent.trim() || id;
+      };
+
+      const syncSectionNavigator = (targetId) => {
+        const current = Math.max(0, views.findIndex((view) => view.id === targetId));
+        const previous = views[(current - 1 + views.length) % views.length];
+        const next = views[(current + 1) % views.length];
+        const previousLabel = viewLabel(previous.id);
+        const nextLabel = viewLabel(next.id);
+        const previousButton = $("[data-prev-section]");
+        const nextButton = $("[data-next-section]");
+        const previousText = $("[data-prev-label]");
+        const nextText = $("[data-next-label]");
+        if (previousText) previousText.textContent = previousLabel;
+        if (nextText) nextText.textContent = nextLabel;
+        previousButton?.setAttribute("aria-label", "Ir a la sección anterior: " + previousLabel);
+        nextButton?.setAttribute("aria-label", "Ir a la sección siguiente: " + nextLabel);
+      };
+
+      const setCurrentLinks = (targetId) => {
+        activeViewId = targetId;
+        links.forEach((link) => {
+          const active = link.hash === "#" + targetId;
+          if (active) link.setAttribute("aria-current", "page");
+          else link.removeAttribute("aria-current");
+        });
+        syncSectionNavigator(targetId);
+        const bar = $(".section-bar");
+        const activeBarLink = bar?.querySelector('[href="#' + CSS.escape(targetId) + '"]');
+        if (bar && activeBarLink) {
+          const left = activeBarLink.offsetLeft - (bar.clientWidth - activeBarLink.offsetWidth) / 2;
+          bar.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
+        }
+      };
+
+      const navigate = (direction) => {
+        const current = Math.max(0, views.findIndex((view) => view.id === activeViewId));
+        const nextIndex = (current + direction + views.length) % views.length;
+        setActiveView(views[nextIndex].id, { history: "push", focus: true });
+      };
+
+      const setActiveView = (id, options) => {
+        const settings = Object.assign({ history: "none", focus: false }, options || {});
+        const targetId = validIds.has(id) ? id : defaultView;
+        const continuous = root.dataset.reading === "continuous";
+        views.forEach((view) => {
+          const active = view.id === targetId;
+          view.hidden = continuous ? false : !active;
+          view.inert = continuous ? false : !active;
+        });
+        setCurrentLinks(targetId);
+        if (settings.history === "push") history.pushState({ view: targetId }, "", "#" + targetId);
+        if (settings.history === "replace") history.replaceState({ view: targetId }, "", "#" + targetId);
+        if (settings.focus) {
+          const target = document.getElementById(targetId);
+          window.requestAnimationFrame(() => target?.focus({ preventScroll: true }));
+          if (continuous) target?.scrollIntoView({ block: "start", behavior: "smooth" });
+          else window.scrollTo({ top: 0, behavior: "auto" });
+        }
+      };
+
+      const observeContinuousReading = () => {
+        readingObserver?.disconnect();
+        if (root.dataset.reading !== "continuous" || !("IntersectionObserver" in window)) return;
+        readingObserver = new IntersectionObserver((entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          if (!visible || visible.target.id === activeViewId) return;
+          setCurrentLinks(visible.target.id);
+          history.replaceState({ view: visible.target.id }, "", "#" + visible.target.id);
+        }, { rootMargin: "-18% 0px -62% 0px", threshold: [0.05, 0.25, 0.5] });
+        views.forEach((view) => readingObserver.observe(view));
+      };
+
+      const setReading = (mode, options) => {
+        const settings = Object.assign({ focus: false }, options || {});
+        const next = mode === "continuous" ? "continuous" : "sectioned";
+        root.dataset.reading = next;
+        const label = $("[data-reading-label]");
+        if (label) label.textContent = next === "continuous" ? "Vista por secciones" : "Scroll continuo";
+        const icon = $("[data-reading-icon]");
+        if (icon) icon.setAttribute("href", next === "continuous" ? "#wcs-icon-panel-top" : "#wcs-icon-rows");
+        readingButton?.setAttribute("aria-pressed", String(next === "continuous"));
+        setActiveView(idFromLocation(), { focus: settings.focus });
+        if (next === "continuous") observeContinuousReading();
+        else readingObserver?.disconnect();
+      };
+
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const id = decodeURIComponent(link.hash.slice(1));
+          if (!validIds.has(id)) return;
+          event.preventDefault();
+          setActiveView(id, { history: "push", focus: true });
+        });
+      });
+
+      window.addEventListener("popstate", () => setActiveView(idFromLocation(), { focus: true }));
+      window.addEventListener("hashchange", () => setActiveView(idFromLocation(), { focus: true }));
+
+      const readPreference = (key, fallback) => {
+        try { return localStorage.getItem(key) || fallback; } catch { return fallback; }
+      };
+      const storePreference = (key, value) => {
+        try { localStorage.setItem(key, value); } catch { /* storage can be unavailable in restricted contexts */ }
+      };
+
+      const setSectionNavigator = (visible) => {
+        const navigator = $("[data-section-navigator]");
+        const button = $("[data-toggle-section-nav]");
+        const label = $("[data-section-nav-label]");
+        if (navigator) navigator.hidden = !visible;
+        button?.setAttribute("aria-pressed", String(visible));
+        if (label) label.textContent = visible ? "Ocultar navegación rápida" : "Mostrar navegación rápida";
+      };
+
+      setSectionNavigator(readPreference("wcs-section-nav", "visible") !== "hidden");
+      $("[data-toggle-section-nav]")?.addEventListener("click", () => {
+        const visible = $("[data-section-navigator]")?.hidden !== false;
+        storePreference("wcs-section-nav", visible ? "visible" : "hidden");
+        setSectionNavigator(visible);
+      });
+
+      setReading(readPreference("wcs-reading", "sectioned"));
+      readingButton?.addEventListener("click", () => {
+        const next = root.dataset.reading === "continuous" ? "sectioned" : "continuous";
+        storePreference("wcs-reading", next);
+        setReading(next, { focus: true });
+      });
+
+      const savedTheme = readPreference("wcs-theme", "");
+      const setTheme = (theme) => {
+        const next = theme === "dark" ? "dark" : "light";
+        root.dataset.theme = next;
+        const label = $("[data-theme-label]");
+        if (label) label.textContent = next === "dark" ? "Tema claro" : "Tema oscuro";
+        const icon = $("[data-theme-icon]");
+        if (icon) icon.setAttribute("href", next === "dark" ? "#wcs-icon-sun" : "#wcs-icon-moon");
+        themeButton?.setAttribute("aria-pressed", String(next === "dark"));
+      };
+      setTheme(savedTheme || "light");
+      themeButton?.addEventListener("click", () => {
+        const next = root.dataset.theme === "dark" ? "light" : "dark";
+        storePreference("wcs-theme", next);
+        setTheme(next);
+      });
+
+      const setNav = (placement) => {
+        const next = placement === "vertical" ? "vertical" : "horizontal";
+        root.dataset.nav = next;
+        const label = $("[data-nav-label]");
+        if (label) label.textContent = next === "vertical" ? "Menú horizontal" : "Menú vertical";
+        const icon = $("[data-nav-icon]");
+        if (icon) icon.setAttribute("href", next === "vertical" ? "#wcs-icon-panel-top-close" : "#wcs-icon-panel-left");
+        navButton?.setAttribute("aria-pressed", String(next === "vertical"));
+      };
+      setNav(readPreference("wcs-nav", "horizontal"));
+      navButton?.addEventListener("click", () => {
+        const next = root.dataset.nav === "vertical" ? "horizontal" : "vertical";
+        storePreference("wcs-nav", next);
+        setNav(next);
+      });
+
+      const copyViewLink = async (viewId) => {
+        const targetId = validIds.has(viewId) ? viewId : activeViewId;
+        const url = new URL(window.location.href);
+        url.hash = targetId;
+        try {
+          await navigator.clipboard.writeText(url.toString());
+          showToast("Enlace copiado");
+        } catch {
+          history.replaceState({ view: targetId }, "", url);
+          showToast("Sección seleccionada; copie la dirección del navegador");
+        }
+      };
+
+      const toggleMenu = (force) => {
+        const open = typeof force === "boolean" ? force : menu.hidden;
+        menu.hidden = !open;
+        menuTrigger?.setAttribute("aria-expanded", String(open));
+      };
+
+      const setDirty = (next) => {
+        dirty = Boolean(next);
+        root.dataset.dirty = String(dirty);
+        menuTrigger?.setAttribute("data-dirty", String(dirty));
+        const state = $("[data-save-state]");
+        if (state) {
+          state.dataset.dirty = String(dirty);
+          state.textContent = dirty ? "Cambios sin guardar" : "Todo guardado";
+        }
+      };
+
+      const collectEditables = () => {
+        const selector = [
+          ".brand-copy h1", ".brand-copy > span", "main h2", "main h3", "main h4", "main p",
+          "main li", "main th", "main td", "main summary", "main dt", "main dd", "main figcaption",
+          "main caption", "main span", "main strong", "main small", "main output", "main .metric", "main [data-edit-id]"
+        ].join(",");
+        const counts = new Map();
+        return $$(selector).filter((element) => {
+          if (element.closest("button, a, nav, select, option, input, textarea, [data-control-dock], dialog, [data-no-edit]")) return false;
+          const editableAncestor = element.parentElement?.closest(selector);
+          if (editableAncestor && !editableAncestor.closest("button, a, nav, select, option, input, textarea, [data-control-dock], dialog, [data-no-edit]")) return false;
+          const viewId = element.closest("[data-view]")?.id || "document";
+          const key = viewId + "-" + element.tagName.toLowerCase();
+          const count = (counts.get(key) || 0) + 1;
+          counts.set(key, count);
+          if (!element.dataset.editId) element.dataset.editId = key + "-" + String(count).padStart(2, "0");
+          return true;
+        });
+      };
+
+      const semanticRole = (element) => {
+        if (element.matches("h1")) return "h1";
+        if (element.matches("h2")) return "h2";
+        if (element.matches("h3, h4")) return "h3";
+        if (element.matches("small, .eyebrow, .status, caption")) return "label";
+        return "body";
+      };
+
+      const sizeBounds = {
+        label: [11, 16], body: [14, 22], h3: [18, 34], h2: [24, 48], h1: [34, 72]
+      };
+
+      const parseRgb = (value) => {
+        const match = value.match(/rgba?\((\d+(?:\.\d+)?)\s*[, ]\s*(\d+(?:\.\d+)?)\s*[, ]\s*(\d+(?:\.\d+)?)/);
+        return match ? match.slice(1, 4).map(Number) : null;
+      };
+
+      const luminance = (rgb) => {
+        const channels = rgb.map((value) => {
+          const normalized = value / 255;
+          return normalized <= 0.03928 ? normalized / 12.92 : Math.pow((normalized + 0.055) / 1.055, 2.4);
+        });
+        return 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2];
+      };
+
+      const resolvedColor = (value) => {
+        const probe = document.createElement("span");
+        probe.style.color = value || "var(--text)";
+        probe.hidden = true;
+        document.body.append(probe);
+        const color = getComputedStyle(probe).color;
+        probe.remove();
+        return parseRgb(color);
+      };
+
+      const colorPassesContrast = (value) => {
+        const foreground = resolvedColor(value);
+        const background = resolvedColor("var(--surface)");
+        if (!foreground || !background) return false;
+        const first = luminance(foreground);
+        const second = luminance(background);
+        return (Math.max(first, second) + 0.05) / (Math.min(first, second) + 0.05) >= 4.5;
+      };
+
+      const markEdited = (element) => {
+        element.dataset.userEdited = "true";
+        setDirty(true);
+      };
+
+      const placeAuthorToolbar = () => {
+        if (!activeEditable || authorToolbar?.hidden || window.matchMedia("(max-width: 47.99rem)").matches) return;
+        const rect = activeEditable.getBoundingClientRect();
+        const toolbarRect = authorToolbar.getBoundingClientRect();
+        const gap = 10;
+        const left = Math.min(window.innerWidth - toolbarRect.width - gap, Math.max(gap, rect.left));
+        const below = rect.bottom + gap;
+        const top = below + toolbarRect.height <= window.innerHeight - gap
+          ? below
+          : Math.max(gap, rect.top - toolbarRect.height - gap);
+        authorToolbar.style.left = left + "px";
+        authorToolbar.style.top = top + "px";
+      };
+
+      const syncAuthorToolbar = (element) => {
+        activeEditable = element;
+        const role = semanticRole(element);
+        const bounds = sizeBounds[role];
+        const computed = getComputedStyle(element);
+        $("[data-author-target]").textContent = role.toUpperCase() + " · " + element.dataset.editId + " · " + element.textContent.trim().slice(0, 70);
+        $("[data-author-size-label]").textContent = "Tamaño " + bounds[0] + "–" + bounds[1];
+        authorSize.min = String(bounds[0]);
+        authorSize.max = String(bounds[1]);
+        authorSize.value = String(Math.round(parseFloat(computed.fontSize)));
+        authorFamily.value = element.dataset.editStyleFamily || "";
+        authorColor.value = element.dataset.editStyleColor || "";
+        authorWeight.value = element.dataset.editStyleWeight || "";
+        authorAlign.value = element.dataset.editStyleAlign || "";
+        authorItalic.setAttribute("aria-pressed", String((element.dataset.editStyleItalic || computed.fontStyle) === "italic"));
+        authorToolbar.hidden = false;
+        window.requestAnimationFrame(placeAuthorToolbar);
+      };
+
+      const closeAuthorToolbar = () => {
+        if (authorToolbar) authorToolbar.hidden = true;
+        authorToolbar?.removeAttribute("style");
+        activeEditable = null;
+      };
+
+      const applyAuthorStyle = (property, value, dataKey) => {
+        if (!activeEditable) return;
+        activeEditable.style[property] = value;
+        if (value) activeEditable.dataset[dataKey] = value;
+        else delete activeEditable.dataset[dataKey];
+        markEdited(activeEditable);
+      };
+
+      authorFamily?.addEventListener("change", () => applyAuthorStyle("fontFamily", authorFamily.value, "editStyleFamily"));
+      authorSize?.addEventListener("change", () => {
+        if (!activeEditable) return;
+        const role = semanticRole(activeEditable);
+        const [minimum, maximum] = sizeBounds[role];
+        const size = Math.min(maximum, Math.max(minimum, Number(authorSize.value) || minimum));
+        authorSize.value = String(size);
+        applyAuthorStyle("fontSize", size + "px", "editStyleSize");
+      });
+      authorColor?.addEventListener("change", () => {
+        if (authorColor.value && !colorPassesContrast(authorColor.value)) {
+          authorColor.value = activeEditable?.dataset.editStyleColor || "";
+          showToast("Ese color no alcanza contraste AA");
+          return;
+        }
+        applyAuthorStyle("color", authorColor.value, "editStyleColor");
+      });
+      authorWeight?.addEventListener("change", () => applyAuthorStyle("fontWeight", authorWeight.value, "editStyleWeight"));
+      authorAlign?.addEventListener("change", () => applyAuthorStyle("textAlign", authorAlign.value, "editStyleAlign"));
+      authorItalic?.addEventListener("click", () => {
+        const next = authorItalic.getAttribute("aria-pressed") !== "true";
+        authorItalic.setAttribute("aria-pressed", String(next));
+        applyAuthorStyle("fontStyle", next ? "italic" : "", "editStyleItalic");
+      });
+      $("[data-author-reset]")?.addEventListener("click", () => {
+        if (!activeEditable) return;
+        ["fontFamily", "fontSize", "color", "fontWeight", "fontStyle", "textAlign"].forEach((property) => activeEditable.style[property] = "");
+        Object.keys(activeEditable.dataset).filter((key) => key.startsWith("editStyle")).forEach((key) => delete activeEditable.dataset[key]);
+        markEdited(activeEditable);
+        syncAuthorToolbar(activeEditable);
+      });
+      $("[data-author-close]")?.addEventListener("click", closeAuthorToolbar);
+      window.addEventListener("resize", placeAuthorToolbar);
+      window.addEventListener("scroll", placeAuthorToolbar, { passive: true });
+
+      const toggleEdit = (force) => {
+        editing = typeof force === "boolean" ? force : !editing;
+        root.dataset.editing = String(editing);
+        collectEditables().forEach((element) => {
+          if (editing) {
+            element.setAttribute("contenteditable", "true");
+            element.setAttribute("spellcheck", "true");
+          } else {
+            element.removeAttribute("contenteditable");
+            element.removeAttribute("spellcheck");
+          }
+        });
+        if (!editing) closeAuthorToolbar();
+        const label = $("[data-edit-label]");
+        if (label) label.textContent = editing ? "Salir de edición" : "Editar textos";
+        toggleMenu(false);
+        showToast(editing ? "Edición activa" : "Edición finalizada");
+      };
+
+      const serializeDocument = () => {
+        const clone = document.documentElement.cloneNode(true);
+        clone.dataset.editing = "false";
+        clone.dataset.dirty = "false";
+        clone.querySelectorAll("[contenteditable]").forEach((element) => {
+          element.removeAttribute("contenteditable");
+          element.removeAttribute("spellcheck");
+        });
+        const clonedMenu = clone.querySelector("[data-control-menu]");
+        if (clonedMenu) clonedMenu.hidden = true;
+        const clonedTrigger = clone.querySelector("[data-menu-trigger]");
+        clonedTrigger?.setAttribute("aria-expanded", "false");
+        clonedTrigger?.setAttribute("data-dirty", "false");
+        const clonedState = clone.querySelector("[data-save-state]");
+        if (clonedState) {
+          clonedState.dataset.dirty = "false";
+          clonedState.textContent = "Todo guardado";
+        }
+        clone.querySelectorAll("dialog[open]").forEach((dialog) => dialog.removeAttribute("open"));
+        const clonedToast = clone.querySelector("[data-toast]");
+        if (clonedToast) {
+          clonedToast.dataset.visible = "false";
+          clonedToast.textContent = "";
+        }
+        const clonedToolbar = clone.querySelector("[data-author-toolbar]");
+        if (clonedToolbar) {
+          clonedToolbar.hidden = true;
+          clonedToolbar.removeAttribute("style");
+          const target = clonedToolbar.querySelector("[data-author-target]");
+          if (target) target.textContent = "Seleccione un texto editable";
+        }
+        return "<!doctype html>\n" + clone.outerHTML;
+      };
+
+      const suggestedFileName = () => {
+        const pathName = decodeURIComponent(window.location.pathname.split("/").pop() || "documento.html");
+        return pathName.toLowerCase().endsWith(".html") ? pathName : "documento.html";
+      };
+
+      const downloadDocument = () => {
+        const blob = new Blob([serializeDocument()], { type: "text/html;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = suggestedFileName();
+        document.body.append(link);
+        link.click();
+        link.remove();
+        window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+        setDirty(false);
+        showToast("HTML descargado");
+      };
+
+      const saveDocument = async (forcePicker = false) => {
+        try {
+          if (forcePicker) fileHandle = null;
+          if (!fileHandle && "showSaveFilePicker" in window) {
+            fileHandle = await window.showSaveFilePicker({
+              suggestedName: suggestedFileName(),
+              types: [{ description: "Documento HTML", accept: { "text/html": [".html"] } }]
+            });
+          }
+          if (fileHandle) {
+            const writable = await fileHandle.createWritable();
+            await writable.write(serializeDocument());
+            await writable.close();
+            setDirty(false);
+            showToast("Cambios guardados");
+          } else {
+            downloadDocument();
+          }
+        } catch (error) {
+          if (error?.name !== "AbortError") {
+            showToast("No se pudo guardar; se descargará una copia");
+            downloadDocument();
+          }
+        }
+      };
+
+      const toggleFullscreen = async () => {
+        try {
+          if (document.fullscreenElement) await document.exitFullscreen();
+          else await document.documentElement.requestFullscreen();
+        } catch { showToast("Pantalla completa no disponible"); }
+        toggleMenu(false);
+      };
+
+      $("[data-prev-section]")?.addEventListener("click", () => navigate(-1));
+      $("[data-next-section]")?.addEventListener("click", () => navigate(1));
+      menuTrigger?.addEventListener("click", () => toggleMenu());
+      $("[data-copy-current]")?.addEventListener("click", () => { copyViewLink(activeViewId); toggleMenu(false); });
+      $("[data-toggle-edit]")?.addEventListener("click", () => toggleEdit());
+      $("[data-save-document]")?.addEventListener("click", () => { saveDocument(); toggleMenu(false); });
+      $("[data-fullscreen]")?.addEventListener("click", toggleFullscreen);
+      $("[data-show-shortcuts]")?.addEventListener("click", () => { toggleMenu(false); shortcutsDialog?.showModal(); });
+      $("[data-close-shortcuts]")?.addEventListener("click", () => shortcutsDialog?.close());
+      $$('[data-copy-view]').forEach((button) => button.addEventListener("click", () => copyViewLink(button.dataset.copyView)));
+
+      document.addEventListener("click", (event) => {
+        if (!menu.hidden && !event.target.closest("[data-control-dock]")) toggleMenu(false);
+        const editable = event.target.closest('[data-edit-id][contenteditable="true"]');
+        if (editable) syncAuthorToolbar(editable);
+      });
+
+      document.addEventListener("focusin", (event) => {
+        const editable = event.target.closest?.('[data-edit-id][contenteditable="true"]');
+        if (editable) syncAuthorToolbar(editable);
+      });
+
+      document.addEventListener("input", (event) => {
+        const editable = event.target.closest('[data-edit-id][contenteditable="true"]');
+        if (editable) markEdited(editable);
+      });
+
+      document.addEventListener("paste", (event) => {
+        if (!event.target.closest('[data-edit-id][contenteditable="true"]')) return;
+        event.preventDefault();
+        document.execCommand("insertText", false, event.clipboardData?.getData("text/plain") || "");
+      });
+
+      document.addEventListener("keydown", (event) => {
+        const typing = event.target.closest('input, textarea, select, [contenteditable="true"]');
+        if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "s") {
+          event.preventDefault();
+          saveDocument(event.shiftKey);
+          return;
+        }
+        if (event.key === "Escape") {
+          toggleMenu(false);
+          closeAuthorToolbar();
+          if (shortcutsDialog?.open) shortcutsDialog.close();
+          return;
+        }
+        if (typing || event.metaKey || event.ctrlKey || event.altKey) return;
+        if (event.key === "ArrowRight") { event.preventDefault(); navigate(1); }
+        else if (event.key === "ArrowLeft") { event.preventDefault(); navigate(-1); }
+        else if (event.key.toLowerCase() === "t") themeButton?.click();
+        else if (event.key.toLowerCase() === "v") readingButton?.click();
+        else if (event.key.toLowerCase() === "l") navButton?.click();
+        else if (event.key.toLowerCase() === "g") $("[data-toggle-section-nav]")?.click();
+        else if (event.key.toLowerCase() === "e") toggleEdit();
+        else if (event.key.toLowerCase() === "m") toggleMenu();
+        else if (event.key.toLowerCase() === "f") toggleFullscreen();
+        else if (event.key === "?") shortcutsDialog?.showModal();
+      });
+
+      window.addEventListener("beforeunload", (event) => {
+        if (!dirty) return;
+        event.preventDefault();
+        event.returnValue = "";
+      });
+
+      $("[data-current-year]").textContent = String(new Date().getFullYear());
+      setDirty(false);
+      setActiveView(idFromLocation(), { history: window.location.hash ? "none" : "replace" });
+    })();
+  </script>
+  <script>
+    (() => {
+      const slots = [
+        ["6:30–7:00 AM", "Abrir cocina, sacar basura y revisar desayuno.", "work"],
+        ["7:00–8:00 AM", "Preparar y servir desayuno; dejar cocina en orden.", "work"],
+        ["8:00–8:15 AM", "Descanso corto.", "rest"],
+        ["8:15–9:15 AM", null, "work"],
+        ["9:15–10:00 AM", null, "work"],
+        ["10:00–10:15 AM", "Descanso corto.", "rest"],
+        ["10:15–11:15 AM", null, "work"],
+        ["11:15 AM–12:00 PM", "Terminar almuerzo y dejar cocina lista.", "work"],
+        ["12:00–2:00 PM", "Almuerzo y descanso protegido.", "rest"],
+        ["2:00–3:00 PM", null, "work"],
+        ["3:00–4:00 PM", null, "work"],
+        ["4:00–4:30 PM", "Descanso corto.", "rest"],
+        ["4:30–5:30 PM", "Preparar cena o adelantar menú del día siguiente.", "work"],
+        ["5:30–6:00 PM", "Disponer mesa y finalizar preparación de cena.", "dinner"],
+        ["6:00–6:30 PM", "Servir la cena.", "dinner"],
+        ["6:30–7:00 PM", "Lavar trastes, desechar residuos y dejar mesa y cocina en orden.", "dinner"]
+      ];
+      const schedule = {
+        e1: {
+          name: "Empleada 1", label: "E1 · Lunes 12:00 PM a viernes 12:00 PM",
+          note: "En los días completos, E1 sigue el mismo flujo: una tarea principal, una etapa de lavandería y un cierre ligero. Atiende habitaciones, ropa regular, planchado y cocina entre semana.",
+          days: [
+            { label: "Lunes", tasks: [], overrides: { 0: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 1: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 2: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 3: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 4: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 5: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 6: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 7: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 8: ["Ingreso E1 12:00 PM · relevo, almuerzo y descanso protegido.", "transfer"], 9: ["Lavar trastes del almuerzo y recibir estado de ropa/cocina.", "work"], 10: ["Cerrar relevo: priorizar un pendiente máximo para la tarde.", "work"] } },
+            { label: "Martes", tasks: ["Baños prioritarios: limpieza y reposición; no sumar habitaciones.", "Robot en pasillos y revisión puntual de una habitación.", "Iniciar una carga de ropa regular y avanzar almuerzo.", "Lavar trastes del almuerzo y tender ropa regular.", "Doblar ropa seca o dejar organizada la carga; no planchado este día."] },
+            { label: "Miércoles", tasks: ["Planchado programado de prendas regulares; no ropa delicada.", "Continuar planchado; máximo 1 h 45 min total antes del descanso.", "Avanzar almuerzo; no iniciar carga regular en día de planchado.", "Lavar trastes del almuerzo y ordenar cocina.", "Cerrar planchado: guardar prendas terminadas y registrar pendientes."] },
+            { label: "Jueves", tasks: ["Cocina: limpieza profunda ligera o refrigeradora; elegir solo una.", "Robot en áreas comunes mientras se termina la tarea elegida.", "Iniciar una carga de ropa regular y avanzar almuerzo.", "Lavar trastes del almuerzo y tender ropa regular.", "Doblar ropa seca o preparar compra/menú; no sumar otra limpieza profunda."] },
+            { label: "Viernes", tasks: ["Revisar habitaciones prioritarias y ropa que debe quedar lista para relevo.", "Robot en áreas comunes; cierre de pendientes de semana.", "Avanzar almuerzo y revisar solo una carga pendiente."], overrides: { 8: ["Salida E1 12:00 PM · entregar bitácora y relevo a E2.", "transfer"], 9: ["Fuera de turno · E2 cubre desde las 12:00 PM.", "off"], 10: ["Fuera de turno · E2 cubre desde las 12:00 PM.", "off"], 11: ["Fuera de turno · E2 cubre desde las 12:00 PM.", "off"], 12: ["Fuera de turno · E2 cubre desde las 12:00 PM.", "off"], 13: ["Fuera de turno · E2 cubre desde las 12:00 PM.", "off"], 14: ["Fuera de turno · E2 cubre desde las 12:00 PM.", "off"], 15: ["Fuera de turno · E2 cubre desde las 12:00 PM.", "off"] } }
+          ]
+        },
+        e2: {
+          name: "Empleada 2", label: "E2 · Viernes 12:00 PM a lunes 12:00 PM",
+          note: "En los días completos, E2 sigue el mismo flujo: una tarea principal, una etapa de lavandería y un cierre ligero. Es responsable de áreas sociales, baños de mantenimiento y continuidad de fin de semana.",
+          days: [
+            { label: "Viernes", tasks: [], overrides: { 0: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 1: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 2: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 3: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 4: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 5: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 6: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 7: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 8: ["Ingreso E2 12:00 PM · recibir bitácora, almuerzo y descanso protegido.", "transfer"], 9: ["Lavar trastes del almuerzo, revisar ropa urgente y ordenar cocina.", "work"], 10: ["Cierre ligero de sala/pasillos; registrar ropa pendiente.", "work"] } },
+            { label: "Sábado", tasks: ["Área social semanal: sala o oficina; alternar, nunca ambas.", "Robot en el área social restante y limpieza puntual de bar/ping-pong.", "Avanzar almuerzo; lavar ropa urgente solo si existe.", "Lavar trastes del almuerzo y atender ropa urgente iniciada.", "Ordenar área social; no planchado acumulado."] },
+            { label: "Domingo", tasks: ["Mantenimiento de baños o una habitación prioritaria; elegir solo una.", "Robot en sala/pasillos y revisión básica de áreas comunes.", "Avanzar almuerzo; no iniciar ropa salvo necesidad puntual.", "Lavar trastes del almuerzo y doblar ropa indispensable ya seca.", "Preparar relevo del lunes; sin planchado acumulado."] },
+            { label: "Lunes", tasks: ["Revisar cocina, inventario y estado de áreas sociales tras el fin de semana.", "Robot en áreas comunes y cierre de pendientes de fin de semana."], overrides: { 6: ["Avanzar almuerzo de transición y actualizar bitácora para E1.", "work"], 7: ["Dejar cocina y relevo listos; no iniciar tareas nuevas.", "work"], 8: ["Salida E2 12:00 PM · entregar bitácora y relevo a E1.", "transfer"], 9: ["Fuera de turno · E1 cubre desde las 12:00 PM.", "off"], 10: ["Fuera de turno · E1 cubre desde las 12:00 PM.", "off"], 11: ["Fuera de turno · E1 cubre desde las 12:00 PM.", "off"], 12: ["Fuera de turno · E1 cubre desde las 12:00 PM.", "off"], 13: ["Fuera de turno · E1 cubre desde las 12:00 PM.", "off"], 14: ["Fuera de turno · E1 cubre desde las 12:00 PM.", "off"], 15: ["Fuera de turno · E1 cubre desde las 12:00 PM.", "off"] } }
+          ]
+        }
+      };
+      const toggle = document.getElementById("employee-toggle");
+      const employeeLabel = document.getElementById("employee-label");
+      const title = document.getElementById("schedule-title");
+      const note = document.getElementById("schedule-note");
+      const status = document.getElementById("schedule-status");
+      const head = document.getElementById("schedule-head");
+      const body = document.getElementById("schedule-body");
+      const exception = document.getElementById("schedule-exception");
+      if (!toggle || !head || !body) return;
+
+      const escape = (value) => String(value).replace(/[&<>"']/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
+      let employeeId = "e1";
+      const render = () => {
+        const employee = schedule[employeeId];
+        employeeLabel.textContent = employee.label;
+        title.textContent = `${employee.name} · Semana completa`;
+        note.textContent = employee.note;
+        status.textContent = employeeId === "e1" ? "Lun 12 PM–Vie 12 PM" : "Vie 12 PM–Lun 12 PM";
+        toggle.textContent = employeeId === "e1" ? "Ver Empleada 2" : "Ver Empleada 1";
+        toggle.setAttribute("aria-pressed", String(employeeId === "e2"));
+        head.innerHTML = `<tr><th scope="col">Hora</th>${employee.days.map((item) => `<th scope="col">${escape(item.label)}</th>`).join("")}</tr>`;
+        const taskSlots = [3, 4, 6, 9, 10];
+        body.innerHTML = slots.map(([time, common, kind], slotIndex) => {
+          const rowClass = kind === "rest" ? "break-row" : kind === "dinner" ? "dinner-row" : "";
+          const taskPosition = taskSlots.indexOf(slotIndex);
+          const cells = employee.days.map((item) => {
+            const override = item.overrides?.[slotIndex];
+            const text = override ? override[0] : (common || item.tasks[taskPosition] || "");
+            const cellKind = override ? override[1] : "";
+            return `<td class="${cellKind ? `cell--${cellKind}` : ""}">${escape(text)}</td>`;
+          }).join("");
+          return `<tr class="${rowClass}"><th scope="row">${escape(time)}</th>${cells}</tr>`;
+        }).join("");
+        exception.textContent = employeeId === "e1"
+          ? "Turno real: E1 inicia lunes a las 12:00 PM y entrega el viernes a las 12:00 PM. En días completos, la cena y cierre terminan a las 7:00 PM."
+          : "Turno real: E2 inicia viernes a las 12:00 PM y entrega el lunes a las 12:00 PM. En sábado y domingo, la cena y cierre terminan a las 7:00 PM.";
+      };
+      toggle.addEventListener("click", () => { employeeId = employeeId === "e1" ? "e2" : "e1"; render(); });
+      render();
+    })();
+  </script>
+</body>
+</html>
