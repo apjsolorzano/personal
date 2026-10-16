@@ -1106,7 +1106,32 @@
     .schedule-summary p { margin: .35rem 0 0; color: var(--muted); }
     .schedule-summary .status { align-self: start; }
     .hour-table { min-inline-size: 66rem; table-layout: fixed; }
-    .hour-table th:first-child, .hour-table td:first-child { inline-size: 8.5rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .hour-table th:first-child, .hour-table td:first-child { inline-size: 9rem; white-space: normal; font-variant-numeric: tabular-nums; padding-inline: .8rem; }
+    .hour-range { display: flex; flex-direction: column; align-items: flex-start; gap: .15rem; line-height: 1.45; }
+    .hour-range span { display: block; white-space: nowrap; }
+    .periodic-section { margin-block-start: var(--space-5); scroll-margin-block-start: var(--header-h); }
+    .periodic-section h3 { margin-block: 0 .7rem; }
+    .periodic-section > p { max-inline-size: var(--reading); color: var(--muted); }
+    .frequency-buttons { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; margin-block: var(--space-3); }
+    .frequency-button { display: flex; align-items: center; justify-content: center; gap: .5rem; min-block-size: 3.5rem; padding: .8rem 1rem; border: 2px solid transparent; border-radius: var(--radius-sm); background: var(--frequency-bg); color: var(--frequency-ink); font: inherit; font-weight: 750; line-height: 1.25; cursor: pointer; }
+    .frequency-button::before { content: "✓"; opacity: 0; }
+    .frequency-button[aria-pressed="true"] { border-color: var(--frequency-ink); box-shadow: inset 0 -2px 0 var(--frequency-ink); }
+    .frequency-button[aria-pressed="true"]::before { opacity: 1; }
+    .frequency-button:hover { border-color: var(--frequency-ink); }
+    .frequency-button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+    [data-frequency="semanales"] { --frequency-bg: #f3eef9; --frequency-ink: #654c7e; }
+    [data-frequency="quincenales"] { --frequency-bg: #eef6e9; --frequency-ink: #3b5e39; }
+    [data-frequency="mensuales"] { --frequency-bg: #fbf0df; --frequency-ink: #805b23; }
+    [data-frequency="relevos"] { --frequency-bg: #e8f3f2; --frequency-ink: #2f665f; }
+    [data-frequency="necesidad"] { --frequency-bg: #e8eff8; --frequency-ink: #365f82; }
+    [data-frequency="por-definir"] { --frequency-bg: #f8e9ee; --frequency-ink: #86536c; }
+    .periodic-panel { border-block-start: 3px solid var(--frequency-ink); }
+    .periodic-table { min-inline-size: 54rem; table-layout: fixed; }
+    .periodic-table th, .periodic-table td { vertical-align: top; overflow-wrap: anywhere; }
+    .periodic-table th:first-child { inline-size: 9rem; }
+    .periodic-table th:nth-child(3) { inline-size: 12rem; }
+    .periodic-table .frequency-group th { background: var(--frequency-bg); color: var(--frequency-ink); font-size: var(--step-0); text-align: start; }
+    @media (max-width: 38rem) { .frequency-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; } .frequency-button { padding: .8rem .5rem; font-size: .9rem; } }
     .hour-table td { vertical-align: top; overflow-wrap: anywhere; line-height: 1.35; }
     .hour-table tr:not(.break-row):not(.dinner-row):nth-child(4n + 1) th, .hour-table tr:not(.break-row):not(.dinner-row):nth-child(4n + 1) td { background: #f3eef9; }
     .hour-table tr:not(.break-row):not(.dinner-row):nth-child(4n + 3) th, .hour-table tr:not(.break-row):not(.dinner-row):nth-child(4n + 3) td { background: #eef6e9; }
@@ -1115,6 +1140,17 @@
     .hour-table td.cell--off { background: #f2f1ed !important; color: #778177; font-style: italic; }
     .hour-table td.cell--transfer { background: #fff2cc !important; color: #765218; font-weight: 700; }
     .hour-table thead th { background: #dfeee0; color: var(--accent-strong); }
+    html[data-theme="dark"] .hour-table tr:not(.break-row):not(.dinner-row):nth-child(4n + 1) th,
+    html[data-theme="dark"] .hour-table tr:not(.break-row):not(.dinner-row):nth-child(4n + 1) td { background: color-mix(in srgb, #8870b4 15%, var(--surface)); }
+    html[data-theme="dark"] .hour-table tr:not(.break-row):not(.dinner-row):nth-child(4n + 3) th,
+    html[data-theme="dark"] .hour-table tr:not(.break-row):not(.dinner-row):nth-child(4n + 3) td { background: color-mix(in srgb, var(--mint) 9%, var(--surface)); }
+    html[data-theme="dark"] .hour-table .break-row th,
+    html[data-theme="dark"] .hour-table .break-row td { background: color-mix(in srgb, var(--mint) 12%, var(--surface)); color: var(--text); }
+    html[data-theme="dark"] .hour-table .dinner-row th,
+    html[data-theme="dark"] .hour-table .dinner-row td { background: color-mix(in srgb, var(--warning) 12%, var(--surface)); }
+    html[data-theme="dark"] .hour-table td.cell--off { background: var(--surface-2) !important; color: var(--muted); }
+    html[data-theme="dark"] .hour-table td.cell--transfer { background: color-mix(in srgb, var(--warning) 20%, var(--surface)) !important; color: var(--warning); }
+    html[data-theme="dark"] .hour-table thead th { background: var(--accent-soft); color: var(--accent-strong); }
     .schedule-legend { display: flex; flex-wrap: wrap; gap: .5rem; margin-block-start: var(--space-3); }
     .schedule-legend span { display: inline-flex; align-items: center; gap: .35rem; font-size: var(--step--1); color: var(--muted); }
     .schedule-dot { inline-size: .7rem; block-size: .7rem; border-radius: 50%; background: var(--accent); }
@@ -1132,7 +1168,7 @@
       .section-navigator { display: none !important; }
       .schedule-table th:first-child, .schedule-table td:first-child { inline-size: auto; }
       .hour-table { min-inline-size: 58rem; table-layout: fixed; }
-      .hour-table th:first-child, .hour-table td:first-child { inline-size: 6.7rem; font-size: .73rem; }
+      .hour-table th:first-child, .hour-table td:first-child { inline-size: 8rem; font-size: .8rem; }
       .hour-table td { overflow-wrap: anywhere; }
       .alert-card { grid-template-columns: 1fr; }
       .alert-card dl { grid-template-columns: 1fr; gap: .15rem; }
@@ -1185,6 +1221,8 @@
       main { border: 0 !important; padding: 0 !important; }
       .view[hidden] { display: block !important; }
       .view { break-after: page; animation: none; }
+      .frequency-buttons { display: none; }
+      .periodic-table tbody[hidden] { display: table-row-group !important; }
       .hero-card { min-block-size: 0; }
       details > * { display: block; }
     }
@@ -1241,18 +1279,17 @@
           <div class="view-heading" data-qa-text-stack>
             <p class="eyebrow">01 · Maquilishuat · Guía de trabajo</p>
             <h2 id="cronograma-title">Una semana clara, con relevos que sí cubren la casa.</h2>
-            <p class="lede">Seleccione E1 o E2 para ver su flujo de trabajo. Martes a jueves y sábado a domingo son jornadas completas; viernes y lunes son días de relevo a las 12:00 PM.</p>
           </div>
           <div class="view-meta"><span>Horario visible, sin tareas superpuestas</span><button class="copy-link" type="button" data-copy-view="cronograma" aria-label="Copiar enlace a Cronograma" data-tooltip="Copiar enlace"><svg class="lucide-icon" aria-hidden="true"><use href="#wcs-icon-link"/></svg></button></div>
         </header>
 
         <div class="schedule-picker" data-no-edit aria-label="Selector de cronograma">
-          <div><strong id="employee-label">Empleada 1 · Lunes a viernes</strong><p>Vista semanal completa. En móvil, deslice la tabla horizontalmente.</p></div>
+          <div><strong id="employee-label">Empleada 1 · Sandra · Lunes a viernes</strong></div>
           <button class="employee-toggle" id="employee-toggle" type="button" aria-pressed="false">Ver Empleada 2</button>
         </div>
 
         <div class="schedule-summary" aria-live="polite">
-          <div><h3 id="schedule-title">Empleada 1 · Semana laboral</h3><p id="schedule-note">Jornada de 6:30 AM a 7:00 PM. Las tareas de ropa, sala/oficina y planchado tienen bloques separados.</p></div>
+          <div><h3 id="schedule-title">Empleada 1 · Sandra · Rutina diaria</h3><p id="schedule-note">Jornada de 6:30 AM a 7:00 PM. Las actividades semanales, quincenales, mensuales y por necesidad se consultan debajo del cronograma.</p></div>
           <span class="status" id="schedule-status">Horario completo</span>
         </div>
         <div class="table-panel">
@@ -1261,18 +1298,68 @@
           </div>
         </div>
         <div class="schedule-legend" aria-label="Leyenda"><span><i class="schedule-dot" aria-hidden="true"></i> Actividad de trabajo</span><span><i class="schedule-dot schedule-dot--rest" aria-hidden="true"></i> Descanso</span><span><i class="schedule-dot schedule-dot--dinner" aria-hidden="true"></i> Cena y cierre de cocina</span></div>
-        <p class="source-line" id="schedule-exception">La ropa delicada se separa y se asigna a E3 o a un servicio especializado. No se incorpora al planchado regular de E1.</p>
+        <p class="source-line" id="schedule-exception">La ropa delicada se separa y se asigna a la empleada 3 o a un servicio especializado. No se incorpora al planchado regular de la empleada 1.</p>
+
+        <section class="periodic-section" id="actividades-no-diarias" aria-labelledby="periodic-title">
+          <h3 id="periodic-title">Actividades no diarias</h3>
+          <p>Este apartado reúne las tareas semanales, quincenales, mensuales y las que dependen de un relevo o una necesidad puntual. Se realizan solo cuando corresponden y sustituyen un bloque disponible de la rutina; no se suman a la carga del día ni a los descansos.</p>
+          <div class="notice notice--safe"><strong>Programación:</strong> el administrador confirma la fecha y la responsable antes de iniciar. En una misma jornada se programa una sola tarea central. Las frecuencias no indicadas en las notas quedan pendientes de definir.</div>
+          <div class="frequency-buttons" role="group" aria-label="Frecuencia de las actividades" data-no-edit>
+            <button class="frequency-button" id="frequency-semanales" type="button" data-frequency="semanales" aria-pressed="true" aria-controls="periodic-semanales">Semanales</button>
+            <button class="frequency-button" id="frequency-quincenales" type="button" data-frequency="quincenales" aria-pressed="false" aria-controls="periodic-quincenales">Quincenales</button>
+            <button class="frequency-button" id="frequency-mensuales" type="button" data-frequency="mensuales" aria-pressed="false" aria-controls="periodic-mensuales">Mensuales</button>
+            <button class="frequency-button" id="frequency-relevos" type="button" data-frequency="relevos" aria-pressed="false" aria-controls="periodic-relevos">Relevos</button>
+            <button class="frequency-button" id="frequency-necesidad" type="button" data-frequency="necesidad" aria-pressed="false" aria-controls="periodic-necesidad">Según necesidad</button>
+            <button class="frequency-button" id="frequency-por-definir" type="button" data-frequency="por-definir" aria-pressed="false" aria-controls="periodic-por-definir">Por definir</button>
+          </div>
+          <div class="table-panel periodic-panel" id="periodic-panel" data-frequency="semanales"><div class="table-wrap" tabindex="0" role="region" aria-label="Frecuencia, actividad y responsable de las tareas no diarias">
+            <table class="periodic-table">
+              <thead><tr><th scope="col">Frecuencia</th><th scope="col">Actividad</th><th scope="col">Responsable</th><th scope="col">Cuándo y cómo se incorpora</th></tr></thead>
+              <tbody id="periodic-semanales" data-frequency="semanales" aria-labelledby="frequency-semanales">
+                <tr class="frequency-group"><th scope="rowgroup" colspan="4">Actividades semanales</th></tr>
+                <tr><th scope="row">Martes</th><td>Limpieza de baños prioritarios y reposición.</td><td>Empleada 1 · Sandra</td><td>Bloque principal de la mañana. No agregar otra zona profunda.</td></tr>
+                <tr><th scope="row">Miércoles</th><td>Planchado programado de prendas regulares.</td><td>Empleada 1 · Sandra</td><td>Usar los bloques reservados de la mañana y guardar las prendas por la tarde. Ese día no iniciar una carga regular; las prendas delicadas se derivan a apoyo especializado.</td></tr>
+                <tr><th scope="row">Martes y jueves</th><td>Iniciar una carga de ropa regular, tenderla y doblarla cuando esté seca.</td><td>Empleada 1 · Sandra</td><td>Una sola carga y sus etapas dentro de los bloques de lavandería. No añadir planchado.</td></tr>
+                <tr><th scope="row">Sábado</th><td>Limpieza del área social: sala u oficina, alternando la zona.</td><td>Empleada 2</td><td>Elegir una sola zona para el bloque principal; el resto recibe mantenimiento habitual.</td></tr>
+                <tr><th scope="row">Domingo</th><td>Mantenimiento de baños o de una habitación prioritaria.</td><td>Empleada 2</td><td>Elegir una sola actividad, sin acumular limpieza pesada ni planchado.</td></tr>
+              </tbody>
+              <tbody id="periodic-quincenales" data-frequency="quincenales" aria-labelledby="frequency-quincenales" hidden inert>
+                <tr class="frequency-group"><th scope="rowgroup" colspan="4">Actividades quincenales</th></tr>
+                <tr><th scope="row">Cada 15 días</th><td>Limpieza del jardín.</td><td>Empleada 3; o empleada 2 si se programa el sábado</td><td>Máximo un bloque de 2 horas, sin evento ni otra limpieza profunda ese día.</td></tr>
+                <tr><th scope="row">Cada 15 días</th><td>Cambiar el mantel del comedor.</td><td>Responsable del turno, previa programación del administrador</td><td>Registrar el cambio para que el siguiente turno no lo repita.</td></tr>
+              </tbody>
+              <tbody id="periodic-mensuales" data-frequency="mensuales" aria-labelledby="frequency-mensuales" hidden inert>
+                <tr class="frequency-group"><th scope="rowgroup" colspan="4">Actividades mensuales</th></tr>
+                <tr><th scope="row">Una vez al mes, cada actividad</th><td>Barrer la acera exterior; limpiar sillones, refrigeradora y zapatos; limpieza profunda de cocina.</td><td>Empleada 3; o empleada 1 · Sandra, según la tarea aprobada</td><td>Distribuir en fechas distintas. Si se asigna a Sandra, reservar un jueves y sustituir la tarea central; máximo una actividad mensual por jornada.</td></tr>
+                <tr><th scope="row">Una vez al mes</th><td>Mantenimiento de piscina.</td><td>Proveedor especializado o persona capacitada</td><td>Coordinar una visita. No añadirlo como tarea de la jornada regular.</td></tr>
+              </tbody>
+              <tbody id="periodic-relevos" data-frequency="relevos" aria-labelledby="frequency-relevos" hidden inert>
+                <tr class="frequency-group"><th scope="rowgroup" colspan="4">Actividades de relevo</th></tr>
+                <tr><th scope="row">Cada relevo: lunes y viernes</th><td>Bitácora de alimentos, detergentes, ropa y pendientes prioritarios.</td><td>Empleada 1 · Sandra y empleada 2</td><td>Entrega escrita de 15 minutos coordinada con el cambio de turno a las 12:00 PM.</td></tr>
+              </tbody>
+              <tbody id="periodic-necesidad" data-frequency="necesidad" aria-labelledby="frequency-necesidad" hidden inert>
+                <tr class="frequency-group"><th scope="rowgroup" colspan="4">Actividades según necesidad</th></tr>
+                <tr><th scope="row">Solo cuando haya urgencia</th><td>Lavar y atender ropa indispensable durante el fin de semana.</td><td>Empleada 2</td><td>Una carga justificada dentro del turno. No recibir planchado acumulado.</td></tr>
+                <tr><th scope="row">Según necesidad</th><td>Ropa delicada o excedente de planchado.</td><td>Empleada 3 o servicio especializado</td><td>Separar desde el origen y acordar alcance y horario antes de realizar el trabajo.</td></tr>
+              </tbody>
+              <tbody id="periodic-por-definir" data-frequency="por-definir" aria-labelledby="frequency-por-definir" hidden inert>
+                <tr class="frequency-group"><th scope="rowgroup" colspan="4">Actividades con frecuencia por definir</th></tr>
+                <tr><th scope="row">Frecuencia por definir</th><td>Lavado del piso de la sala de ping pong.</td><td>El administrador define responsable y fecha</td><td>Las notas no indican periodicidad. Programar aparte del mantenimiento puntual habitual.</td></tr>
+              </tbody>
+            </table>
+          </div></div>
+        </section>
       </section>
 
       <section class="view" id="alertas" data-view="alertas" data-layout-profile="decision" tabindex="-1" aria-labelledby="alertas-title" hidden inert>
         <header class="view-header"><div class="view-heading"><p class="eyebrow">02 · Señales que requieren acción</p><h2 id="alertas-title">Alertas tempranas de carga, capacidad y deserción.</h2><p class="lede">No son sanciones ni juicios sobre la trabajadora. Son indicadores para ajustar la operación antes de que haya errores, agotamiento o salida del personal.</p></div><div class="view-meta"><span>Base: notas de rutina y cronograma previo</span><button class="copy-link" type="button" data-copy-view="alertas" aria-label="Copiar enlace a Alertas tempranas" data-tooltip="Copiar enlace"><svg class="lucide-icon" aria-hidden="true"><use href="#wcs-icon-link"/></svg></button></div></header>
 
         <div class="alert-list">
-          <article class="alert-card"><div class="alert-index" aria-hidden="true">01</div><div><span class="status">Capacidad y calidad</span><h3>Planchado de prendas delicadas y alto volumen</h3><p><strong>Señal observada:</strong> la nota indica que sería conveniente contratar a otra persona para planchar, porque hay mucha ropa y prendas delicadas; expresa que ese trabajo toma tiempo.</p><dl><dt>Lectura operativa</dt><dd>Alerta temprana de capacidad, especialización y riesgo de daño a prendas; no una falta disciplinaria.</dd><dt>Respuesta</dt><dd>Separar ropa delicada desde el origen, limitar el planchado regular a 45 minutos por sesión y asignar el excedente o lo delicado a E3 o a servicio especializado.</dd><dt>No hacer</dt><dd>Convertir el planchado en tarea de cierre nocturno o exigirlo junto con limpieza profunda y cena.</dd></dl></div></article>
+          <article class="alert-card"><div class="alert-index" aria-hidden="true">01</div><div><span class="status">Capacidad y calidad</span><h3>Planchado de prendas delicadas y alto volumen</h3><p><strong>Señal observada:</strong> la nota indica que sería conveniente contratar a otra persona para planchar, porque hay mucha ropa y prendas delicadas; expresa que ese trabajo toma tiempo.</p><dl><dt>Lectura operativa</dt><dd>Alerta temprana de capacidad, especialización y riesgo de daño a prendas; no una falta disciplinaria.</dd><dt>Respuesta</dt><dd>Separar ropa delicada desde el origen, limitar el planchado regular a 45 minutos por sesión y asignar el excedente o lo delicado a la empleada 3 o a servicio especializado.</dd><dt>No hacer</dt><dd>Convertir el planchado en tarea de cierre nocturno o exigirlo junto con limpieza profunda y cena.</dd></dl></div></article>
           <article class="alert-card"><div class="alert-index" aria-hidden="true">02</div><div><span class="status">Jornada extendida</span><h3>Rutina registrada hasta las 9:30 PM–10:00 PM</h3><p><strong>Señal observada:</strong> las notas de rutina incluyen preparación de cena, cena y planchado hasta el final de la noche.</p><dl><dt>Lectura operativa</dt><dd>La secuencia combina comidas, lavandería, limpieza y cierre en una misma jornada; el sistema no tiene límite de carga.</dd><dt>Respuesta</dt><dd>Reservar de 5:30 PM a 7:00 PM para cena y cierre de cocina. Si no hay cena, ese tramo se usa para adelantar el menú siguiente, lavar trastes y desechar residuos; nunca para sumar limpieza pesada.</dd><dt>No hacer</dt><dd>Pedir que “aproveche” el tiempo ahorrado por el robot para extender la lista del día.</dd></dl></div></article>
           <article class="alert-card"><div class="alert-index" aria-hidden="true">03</div><div><span class="status">Conflicto de prioridades</span><h3>La cena compite con el cierre de limpieza y ropa</h3><p><strong>Señal observada:</strong> el servicio de cena se concentra entre 6:00 PM y 7:00 PM, pero el flujo anterior también dejaba planchado y orden para la noche.</p><dl><dt>Lectura operativa</dt><dd>Si se exige cena servida, el final de la jornada debe tener una sola misión: comida y retiro esencial.</dd><dt>Respuesta</dt><dd>Definir cada día, antes de las 3:30 PM, si habrá servicio de cena. Si la respuesta es sí, congelar tareas adicionales.</dd><dt>No hacer</dt><dd>Introducir cambios de menú o solicitudes no urgentes después de las 3:30 PM.</dd></dl></div></article>
           <article class="alert-card"><div class="alert-index" aria-hidden="true">04</div><div><span class="status">Falta de trazabilidad</span><h3>Pedidos y pendientes sin relevo escrito</h3><p><strong>Señal observada:</strong> múltiples tareas diarias aumentan la probabilidad de duplicar limpieza, perder compras o trasladar pendientes a la noche.</p><dl><dt>Lectura operativa</dt><dd>El problema no es la persona: es un flujo sin una lista corta de entrega y sin límite de trabajo en curso.</dd><dt>Respuesta</dt><dd>Usar una bitácora de 15 minutos lunes y viernes con menú, ropa, robot, compras y un único pendiente prioritario.</dd><dt>No hacer</dt><dd>Agregar instrucciones verbales al día en curso sin indicar qué tarea se pospone.</dd></dl></div></article>
-          <article class="alert-card"><div class="alert-index" aria-hidden="true">05</div><div><span class="status">Capacidad por número de personas</span><h3>Atender a más de cinco personas puede sobrecargar a E1</h3><p><strong>Escenario informado:</strong> se estima una presencia habitual de más de cinco y menos de ocho personas, con cuatro personas prioritarias. El menú es único para todos.</p><dl><dt>Lectura operativa</dt><dd>Un menú único reduce variedad de preparación, pero no reduce porciones, trastes, superficies, ropa ni tiempos de servicio. Si E1 debe atender de forma completa a más de cinco personas, además de lavandería y limpieza, una sola tarea principal diaria deja de ser suficiente.</dd><dt>Respuesta</dt><dd>Definir que E1 presta servicio completo a las cuatro personas prioritarias. Sandra y Pablo no trasladan automáticamente su ropa personal a E1; para el resto, establecer autoservicio o apoyo definido. Cuando el servicio completo supera cinco personas, retirar una tarea profunda o activar apoyo de E2/E3.</dd><dt>No hacer</dt><dd>Asumir que el mismo menú implica la misma carga que atender a cuatro personas, ni convertir el excedente en trabajo nocturno.</dd></dl></div></article>
+          <article class="alert-card"><div class="alert-index" aria-hidden="true">05</div><div><span class="status">Capacidad por número de personas</span><h3>Atender a más de cinco personas puede sobrecargar a la empleada 1 · Sandra</h3><p><strong>Escenario informado:</strong> se estima una presencia habitual de más de cinco y menos de ocho personas, con cuatro personas prioritarias. El menú es único para todos.</p><dl><dt>Lectura operativa</dt><dd>Un menú único reduce variedad de preparación, pero no reduce porciones, trastes, superficies, ropa ni tiempos de servicio. Si la empleada 1 debe atender de forma completa a más de cinco personas, además de lavandería y limpieza, una sola tarea principal diaria deja de ser suficiente.</dd><dt>Respuesta</dt><dd>Definir que la empleada 1, Sandra, presta servicio completo a las cuatro personas prioritarias. La ropa personal de Pablo y de quienes no integran el grupo prioritario no se asigna automáticamente a la empleada 1; para el resto, establecer autoservicio o apoyo definido. Cuando el servicio completo supera cinco personas, retirar una tarea profunda o activar apoyo de la empleada 2 o de la empleada 3.</dd><dt>No hacer</dt><dd>Asumir que el mismo menú implica la misma carga que atender a cuatro personas, ni convertir el excedente en trabajo nocturno.</dd></dl></div></article>
         </div>
         <p class="source-line"><strong>Fuente de observaciones:</strong> transcripción de notas manuscritas de rutina y cronograma operativo previo. Las alertas describen riesgos de organización, no evalúan el desempeño personal.</p>
       </section>
@@ -1283,17 +1370,17 @@
         <article class="decision-note"><div><span class="status">Decisión crítica</span><h3>Defina antes de las 3:30 PM si se servirá cena.</h3><p>Una respuesta tardía produce el mismo problema que muestran las notas: la cena se convierte en una extensión de la limpieza, la ropa y el planchado. Si habrá cena, el bloque de 5:30 PM a 7:00 PM queda reservado.</p></div><div class="key-number" aria-label="Horario de servicio de cena de seis a siete de la noche">6–7 PM</div></article>
 
         <div class="employer-grid" style="margin-block-start: var(--space-3)">
-          <article class="card"><h3>1. Control de carga</h3><ul class="rule-list"><li>Programar solo una tarea central por día: zona profunda, ropa de cama, tarea mensual o planchado; no todas.</li><li>Todo pedido nuevo desplaza una actividad ya programada. No se agrega “por encima”.</li><li>El excedente mensual, los eventos y la carga especial pasan a E3 o al siguiente ciclo.</li></ul></article>
+          <article class="card"><h3>1. Control de carga</h3><ul class="rule-list"><li>Programar solo una tarea central por día: zona profunda, ropa de cama, tarea mensual o planchado; no todas.</li><li>Todo pedido nuevo desplaza una actividad ya programada. No se agrega “por encima”.</li><li>El excedente mensual, los eventos y la carga especial pasan a la empleada 3 o al siguiente ciclo.</li></ul></article>
           <article class="card"><h3>2. Cena y hora de salida</h3><ul class="rule-list"><li>La jornada termina a las 7:00 PM haya o no haya cena; de 5:30 PM a 7:00 PM se reserva para cocina y cierre.</li><li>Si hay cena: servir de 6:00 PM a 6:30 PM y, de 6:30 PM a 7:00 PM, lavar trastes, desechar residuos y ordenar lo esencial.</li><li>Si no hay cena: ese mismo tramo se usa para adelantar el menú siguiente y cerrar cocina; no para limpieza pesada ni planchado.</li></ul></article>
           <article class="card"><h3>3. Descansos y trato operativo</h3><ul class="rule-list"><li>Proteger 12:00 PM–2:00 PM para comida y reposo, sin interrupciones operativas.</li><li>Respetar las pausas de mañana y tarde; no son tiempo “disponible”.</li><li>Ofrecer habitación adecuada, alimentos, herramientas funcionales y comunicación respetuosa.</li></ul></article>
           <article class="card"><h3>4. Herramientas que simplifican</h3><ul class="rule-list"><li>Robot aspirador/trapeador: sala, pasillos y oficina durante el Foco 1; limpieza de depósito martes y viernes.</li><li>Cestas por categoría: blanca, color, cama y delicada; evita clasificar y lavar dos veces.</li><li>Menú semanal antes de las 10:00 AM; evita cambios y compras de último momento.</li></ul></article>
         </div>
 
         <div class="two-column" style="margin-block-start: var(--space-3)">
-          <article class="card"><span class="eyebrow">Vacaciones y contingencias</span><h3>Cómo proteger la cobertura</h3><ul class="check-list"><li>Vacaciones de E1: E2 cubre el esquema de semana; la agencia aporta reemplazo para el bloque de viernes a lunes.</li><li>Ausencia imprevista: E3 cubre comidas, cocina, baño principal y ropa indispensable. Se suspenden limpieza profunda y planchado.</li><li>Evento o festivo: E3 se contrata con horario y alcance escritos; el apoyo no elimina el descanso de E1 o E2.</li><li>Falla del robot o lavandería: se mantiene solo lo esencial y lo no crítico se reprograma; no se prolonga la jornada.</li></ul></article>
-          <article class="card"><span class="eyebrow">Prueba y validación</span><h3>Revisar al finalizar cuatro semanas</h3><ul class="check-list"><li>¿Hubo días que terminaron después de las 7:00 PM? Identificar por qué.</li><li>¿Se respetó el descanso de 12:00 PM–2:00 PM y las pausas breves?</li><li>¿Cuántas tareas se movieron a E3, siguiente ciclo o proveedor especializado?</li><li>¿Las bitácoras de viernes y lunes evitaron duplicar trabajo?</li><li>¿Las trabajadoras reportaron carga, dificultades o falta de herramientas?</li></ul></article>
+          <article class="card"><span class="eyebrow">Vacaciones y contingencias</span><h3>Cómo proteger la cobertura</h3><ul class="check-list"><li>Vacaciones de la empleada 1: empleada 2 cubre el esquema de semana; la agencia aporta reemplazo para el bloque de viernes a lunes.</li><li>Ausencia imprevista: empleada 3 cubre comidas, cocina, baño principal y ropa indispensable. Se suspenden limpieza profunda y planchado.</li><li>Evento o festivo: empleada 3 se contrata con horario y alcance escritos; el apoyo no elimina el descanso de la empleada 1 o empleada 2.</li><li>Falla del robot o lavandería: se mantiene solo lo esencial y lo no crítico se reprograma; no se prolonga la jornada.</li></ul></article>
+          <article class="card"><span class="eyebrow">Prueba y validación</span><h3>Revisar al finalizar cuatro semanas</h3><ul class="check-list"><li>¿Hubo días que terminaron después de las 7:00 PM? Identificar por qué.</li><li>¿Se respetó el descanso de 12:00 PM–2:00 PM y las pausas breves?</li><li>¿Cuántas tareas se movieron a la empleada 3, siguiente ciclo o proveedor especializado?</li><li>¿Las bitácoras de viernes y lunes evitaron duplicar trabajo?</li><li>¿Las trabajadoras reportaron carga, dificultades o falta de herramientas?</li></ul></article>
         </div>
-        <p class="source-line"><strong>Supuesto pendiente de confirmación:</strong> E1 cubre lunes a viernes hasta el viernes a las 12:00 PM y E2 cubre desde el viernes a las 12:00 PM hasta el lunes a las 12:00 PM. Ajuste la matriz antes de aplicar si el relevo real es distinto.</p>
+        <p class="source-line"><strong>Supuesto pendiente de confirmación:</strong> empleada 1 cubre lunes a viernes hasta el viernes a las 12:00 PM y empleada 2 cubre desde el viernes a las 12:00 PM hasta el lunes a las 12:00 PM. Ajuste la matriz antes de aplicar si el relevo real es distinto.</p>
       </section>
     </main>
   </div>
@@ -1997,24 +2084,24 @@
       ];
       const schedule = {
         e1: {
-          name: "Empleada 1", label: "E1 · Lunes 12:00 PM a viernes 12:00 PM",
-          note: "En los días completos, E1 sigue el mismo flujo: una tarea principal, una etapa de lavandería y un cierre ligero. Atiende habitaciones, ropa regular, planchado y cocina entre semana.",
+          name: "Empleada 1 · Sandra", label: "Empleada 1 · Sandra · Lunes 12:00 PM a viernes 12:00 PM",
+          note: "Sandra sigue el flujo diario de comidas, mantenimiento y cierre. La limpieza semanal, el planchado y las cargas de ropa se programan por separado en el apartado de actividades no diarias, debajo de la tabla.",
           days: [
-            { label: "Lunes", tasks: [], overrides: { 0: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 1: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 2: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 3: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 4: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 5: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 6: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 7: ["Fuera de turno · E2 cubre hasta las 12:00 PM.", "off"], 8: ["Ingreso E1 12:00 PM · relevo, almuerzo y descanso protegido.", "transfer"], 9: ["Lavar trastes del almuerzo y recibir estado de ropa/cocina.", "work"], 10: ["Cerrar relevo: priorizar un pendiente máximo para la tarde.", "work"] } },
-            { label: "Martes", tasks: ["Baños prioritarios: limpieza y reposición; no sumar habitaciones.", "Robot en pasillos y revisión puntual de una habitación.", "Iniciar una carga de ropa regular y avanzar almuerzo.", "Lavar trastes del almuerzo y tender ropa regular.", "Doblar ropa seca o dejar organizada la carga; no planchado este día."] },
-            { label: "Miércoles", tasks: ["Planchado programado de prendas regulares; no ropa delicada.", "Continuar planchado; máximo 1 h 45 min total antes del descanso.", "Avanzar almuerzo; no iniciar carga regular en día de planchado.", "Lavar trastes del almuerzo y ordenar cocina.", "Cerrar planchado: guardar prendas terminadas y registrar pendientes."] },
-            { label: "Jueves", tasks: ["Cocina: limpieza profunda ligera o refrigeradora; elegir solo una.", "Robot en áreas comunes mientras se termina la tarea elegida.", "Iniciar una carga de ropa regular y avanzar almuerzo.", "Lavar trastes del almuerzo y tender ropa regular.", "Doblar ropa seca o preparar compra/menú; no sumar otra limpieza profunda."] },
-            { label: "Viernes", tasks: ["Revisar habitaciones prioritarias y ropa que debe quedar lista para relevo.", "Robot en áreas comunes; cierre de pendientes de semana.", "Avanzar almuerzo y revisar solo una carga pendiente."], overrides: { 8: ["Salida E1 12:00 PM · entregar bitácora y relevo a E2.", "transfer"], 9: ["Fuera de turno · E2 cubre desde las 12:00 PM.", "off"], 10: ["Fuera de turno · E2 cubre desde las 12:00 PM.", "off"], 11: ["Fuera de turno · E2 cubre desde las 12:00 PM.", "off"], 12: ["Fuera de turno · E2 cubre desde las 12:00 PM.", "off"], 13: ["Fuera de turno · E2 cubre desde las 12:00 PM.", "off"], 14: ["Fuera de turno · E2 cubre desde las 12:00 PM.", "off"], 15: ["Fuera de turno · E2 cubre desde las 12:00 PM.", "off"] } }
+            { label: "Lunes", tasks: [], overrides: { 0: ["Fuera de turno · la empleada 2 cubre hasta las 12:00 PM.", "off"], 1: ["Fuera de turno · la empleada 2 cubre hasta las 12:00 PM.", "off"], 2: ["Fuera de turno · la empleada 2 cubre hasta las 12:00 PM.", "off"], 3: ["Fuera de turno · la empleada 2 cubre hasta las 12:00 PM.", "off"], 4: ["Fuera de turno · la empleada 2 cubre hasta las 12:00 PM.", "off"], 5: ["Fuera de turno · la empleada 2 cubre hasta las 12:00 PM.", "off"], 6: ["Fuera de turno · la empleada 2 cubre hasta las 12:00 PM.", "off"], 7: ["Fuera de turno · la empleada 2 cubre hasta las 12:00 PM.", "off"], 8: ["Ingreso de la empleada 1 12:00 PM · relevo, almuerzo y descanso protegido.", "transfer"], 9: ["Lavar trastes del almuerzo y recibir estado de ropa/cocina.", "work"], 10: ["Cerrar relevo: priorizar un pendiente máximo para la tarde.", "work"] } },
+            { label: "Martes", tasks: [] },
+            { label: "Miércoles", tasks: [] },
+            { label: "Jueves", tasks: [] },
+            { label: "Viernes", tasks: ["Revisar habitaciones prioritarias y ropa que debe quedar lista para relevo.", "Robot en áreas comunes; cierre de pendientes de semana.", "Avanzar almuerzo y revisar solo una carga pendiente."], overrides: { 8: ["Salida de la empleada 1 12:00 PM · entregar bitácora y relevo a la empleada 2.", "transfer"], 9: ["Fuera de turno · la empleada 2 cubre desde las 12:00 PM.", "off"], 10: ["Fuera de turno · la empleada 2 cubre desde las 12:00 PM.", "off"], 11: ["Fuera de turno · la empleada 2 cubre desde las 12:00 PM.", "off"], 12: ["Fuera de turno · la empleada 2 cubre desde las 12:00 PM.", "off"], 13: ["Fuera de turno · la empleada 2 cubre desde las 12:00 PM.", "off"], 14: ["Fuera de turno · la empleada 2 cubre desde las 12:00 PM.", "off"], 15: ["Fuera de turno · la empleada 2 cubre desde las 12:00 PM.", "off"] } }
           ]
         },
         e2: {
-          name: "Empleada 2", label: "E2 · Viernes 12:00 PM a lunes 12:00 PM",
-          note: "En los días completos, E2 sigue el mismo flujo: una tarea principal, una etapa de lavandería y un cierre ligero. Es responsable de áreas sociales, baños de mantenimiento y continuidad de fin de semana.",
+          name: "Empleada 2", label: "Empleada 2 · Viernes 12:00 PM a lunes 12:00 PM",
+          note: "La empleada 2 mantiene el flujo diario de comidas, áreas comunes y cierre. Las zonas semanales y la ropa urgente se detallan en el apartado independiente de actividades no diarias, debajo de la tabla.",
           days: [
-            { label: "Viernes", tasks: [], overrides: { 0: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 1: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 2: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 3: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 4: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 5: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 6: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 7: ["Fuera de turno · E1 cubre hasta las 12:00 PM.", "off"], 8: ["Ingreso E2 12:00 PM · recibir bitácora, almuerzo y descanso protegido.", "transfer"], 9: ["Lavar trastes del almuerzo, revisar ropa urgente y ordenar cocina.", "work"], 10: ["Cierre ligero de sala/pasillos; registrar ropa pendiente.", "work"] } },
-            { label: "Sábado", tasks: ["Área social semanal: sala o oficina; alternar, nunca ambas.", "Robot en el área social restante y limpieza puntual de bar/ping-pong.", "Avanzar almuerzo; lavar ropa urgente solo si existe.", "Lavar trastes del almuerzo y atender ropa urgente iniciada.", "Ordenar área social; no planchado acumulado."] },
-            { label: "Domingo", tasks: ["Mantenimiento de baños o una habitación prioritaria; elegir solo una.", "Robot en sala/pasillos y revisión básica de áreas comunes.", "Avanzar almuerzo; no iniciar ropa salvo necesidad puntual.", "Lavar trastes del almuerzo y doblar ropa indispensable ya seca.", "Preparar relevo del lunes; sin planchado acumulado."] },
-            { label: "Lunes", tasks: ["Revisar cocina, inventario y estado de áreas sociales tras el fin de semana.", "Robot en áreas comunes y cierre de pendientes de fin de semana."], overrides: { 6: ["Avanzar almuerzo de transición y actualizar bitácora para E1.", "work"], 7: ["Dejar cocina y relevo listos; no iniciar tareas nuevas.", "work"], 8: ["Salida E2 12:00 PM · entregar bitácora y relevo a E1.", "transfer"], 9: ["Fuera de turno · E1 cubre desde las 12:00 PM.", "off"], 10: ["Fuera de turno · E1 cubre desde las 12:00 PM.", "off"], 11: ["Fuera de turno · E1 cubre desde las 12:00 PM.", "off"], 12: ["Fuera de turno · E1 cubre desde las 12:00 PM.", "off"], 13: ["Fuera de turno · E1 cubre desde las 12:00 PM.", "off"], 14: ["Fuera de turno · E1 cubre desde las 12:00 PM.", "off"], 15: ["Fuera de turno · E1 cubre desde las 12:00 PM.", "off"] } }
+            { label: "Viernes", tasks: [], overrides: { 0: ["Fuera de turno · la empleada 1 cubre hasta las 12:00 PM.", "off"], 1: ["Fuera de turno · la empleada 1 cubre hasta las 12:00 PM.", "off"], 2: ["Fuera de turno · la empleada 1 cubre hasta las 12:00 PM.", "off"], 3: ["Fuera de turno · la empleada 1 cubre hasta las 12:00 PM.", "off"], 4: ["Fuera de turno · la empleada 1 cubre hasta las 12:00 PM.", "off"], 5: ["Fuera de turno · la empleada 1 cubre hasta las 12:00 PM.", "off"], 6: ["Fuera de turno · la empleada 1 cubre hasta las 12:00 PM.", "off"], 7: ["Fuera de turno · la empleada 1 cubre hasta las 12:00 PM.", "off"], 8: ["Ingreso de la empleada 2 12:00 PM · recibir bitácora, almuerzo y descanso protegido.", "transfer"], 9: ["Lavar trastes del almuerzo, revisar ropa urgente y ordenar cocina.", "work"], 10: ["Cierre ligero de sala/pasillos; registrar ropa pendiente.", "work"] } },
+            { label: "Sábado", tasks: [] },
+            { label: "Domingo", tasks: [] },
+            { label: "Lunes", tasks: ["Revisar cocina, inventario y estado de áreas sociales tras el fin de semana.", "Robot en áreas comunes y cierre de pendientes de fin de semana."], overrides: { 6: ["Avanzar almuerzo de transición y actualizar bitácora para la empleada 1.", "work"], 7: ["Dejar cocina y relevo listos; no iniciar tareas nuevas.", "work"], 8: ["Salida de la empleada 2 12:00 PM · entregar bitácora y relevo a la empleada 1.", "transfer"], 9: ["Fuera de turno · la empleada 1 cubre desde las 12:00 PM.", "off"], 10: ["Fuera de turno · la empleada 1 cubre desde las 12:00 PM.", "off"], 11: ["Fuera de turno · la empleada 1 cubre desde las 12:00 PM.", "off"], 12: ["Fuera de turno · la empleada 1 cubre desde las 12:00 PM.", "off"], 13: ["Fuera de turno · la empleada 1 cubre desde las 12:00 PM.", "off"], 14: ["Fuera de turno · la empleada 1 cubre desde las 12:00 PM.", "off"], 15: ["Fuera de turno · la empleada 1 cubre desde las 12:00 PM.", "off"] } }
           ]
         }
       };
@@ -2029,11 +2116,24 @@
       if (!toggle || !head || !body) return;
 
       const escape = (value) => String(value).replace(/[&<>"']/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
+      const dailyTasks = [
+        "Mantenimiento diario de la zona prioritaria. Si corresponde una tarea no diaria, usar este bloque según el apartado inferior.",
+        "Robot, orden y revisión puntual; o continuación de la actividad no diaria ya programada.",
+        "Avanzar almuerzo; realizar solo la etapa de lavandería que esté programada.",
+        "Lavar trastes del almuerzo y ordenar cocina; atender la ropa solo si hay una carga iniciada.",
+        "Orden ligero y revisión de pendientes; cerrar la actividad programada sin añadir otra tarea central."
+      ];
+      const formatTime = (time) => {
+        const [rawStart, end] = time.split("–");
+        const period = end.match(/(?:AM|PM)$/)?.[0] || "";
+        const start = /(?:AM|PM)$/.test(rawStart) ? rawStart : `${rawStart} ${period}`;
+        return `<span class="hour-range"><span>${escape(start)}</span><span>a ${escape(end)}</span></span>`;
+      };
       let employeeId = "e1";
       const render = () => {
         const employee = schedule[employeeId];
         employeeLabel.textContent = employee.label;
-        title.textContent = `${employee.name} · Semana completa`;
+        title.textContent = `${employee.name} · Rutina diaria de la semana`;
         note.textContent = employee.note;
         status.textContent = employeeId === "e1" ? "Lun 12 PM–Vie 12 PM" : "Vie 12 PM–Lun 12 PM";
         toggle.textContent = employeeId === "e1" ? "Ver Empleada 2" : "Ver Empleada 1";
@@ -2045,18 +2145,32 @@
           const taskPosition = taskSlots.indexOf(slotIndex);
           const cells = employee.days.map((item) => {
             const override = item.overrides?.[slotIndex];
-            const text = override ? override[0] : (common || item.tasks[taskPosition] || "");
+            const text = override ? override[0] : (common || item.tasks[taskPosition] || dailyTasks[taskPosition] || "");
             const cellKind = override ? override[1] : "";
             return `<td class="${cellKind ? `cell--${cellKind}` : ""}">${escape(text)}</td>`;
           }).join("");
-          return `<tr class="${rowClass}"><th scope="row">${escape(time)}</th>${cells}</tr>`;
+          return `<tr class="${rowClass}"><th scope="row">${formatTime(time)}</th>${cells}</tr>`;
         }).join("");
         exception.textContent = employeeId === "e1"
-          ? "Turno real: E1 inicia lunes a las 12:00 PM y entrega el viernes a las 12:00 PM. En días completos, la cena y cierre terminan a las 7:00 PM."
-          : "Turno real: E2 inicia viernes a las 12:00 PM y entrega el lunes a las 12:00 PM. En sábado y domingo, la cena y cierre terminan a las 7:00 PM.";
+          ? "Turno real: empleada 1 inicia lunes a las 12:00 PM y entrega el viernes a las 12:00 PM. En días completos, la cena y cierre terminan a las 7:00 PM."
+          : "Turno real: empleada 2 inicia viernes a las 12:00 PM y entrega el lunes a las 12:00 PM. En sábado y domingo, la cena y cierre terminan a las 7:00 PM.";
       };
       toggle.addEventListener("click", () => { employeeId = employeeId === "e1" ? "e2" : "e1"; render(); });
       render();
+      const frequencyButtons = [...document.querySelectorAll('.frequency-button')];
+      const frequencyGroups = [...document.querySelectorAll('.periodic-table tbody[data-frequency]')];
+      const frequencyPanel = document.getElementById('periodic-panel');
+      const selectFrequency = (frequency) => {
+        frequencyButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.frequency === frequency)));
+        frequencyGroups.forEach(group => {
+          const active = group.dataset.frequency === frequency;
+          group.hidden = !active;
+          group.inert = !active;
+        });
+        frequencyPanel.dataset.frequency = frequency;
+      };
+      frequencyButtons.forEach(button => button.addEventListener('click', () => selectFrequency(button.dataset.frequency)));
+      selectFrequency(frequencyButtons.find(button => button.getAttribute('aria-pressed') === 'true')?.dataset.frequency || 'semanales');
     })();
   </script>
 </body>
